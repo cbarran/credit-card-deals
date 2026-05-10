@@ -55,7 +55,10 @@
                                     <strong>$6,000</strong>
                                 </div>
                             </div>
-                            <a href="https://thepointsguy.com/credit-cards/travel/" class="btn btn-primary">Claim This Offer</a>
+                            <div class="featured-actions" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                <a href="https://thepointsguy.com/oc/221212097/" class="btn btn-primary" style="flex: 1;">Claim This Offer</a>
+                                <button class="btn btn-outline compare-btn" data-name="Chase Sapphire Reserve®" style="flex: 1;">Compare</button>
+                            </div>
                         </div>
                         <div class="featured-image">
                             <img src="https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2F083f25c0-504f-11f0-962e-072d632f0110.png&w=3840&q=75" alt="Chase Sapphire Reserve">
@@ -107,6 +110,30 @@
             </div>
         </div>
     </footer>
+    <!-- Comparison Bar -->
+    <div id="compare-bar" class="compare-bar">
+        <div class="compare-info">
+            <p><span id="compare-count">0</span> cards selected</p>
+        </div>
+        <div class="compare-actions">
+            <button id="clear-compare" class="btn btn-outline" style="padding: 8px 16px; margin-right: 8px; font-size: 0.8rem;">Clear</button>
+            <button id="compare-now" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Compare Now</button>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div id="compare-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Compare Cards</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div id="compare-table-container">
+                <!-- Comparison table will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

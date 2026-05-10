@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('deals-container');
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-input');
+    const compareBar = document.getElementById('compare-bar');
+    const compareCount = document.getElementById('compare-count');
+    const compareNowBtn = document.getElementById('compare-now');
+    const clearCompareBtn = document.getElementById('clear-compare');
+    const compareModal = document.getElementById('compare-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const compareTableContainer = document.getElementById('compare-table-container');
+
     let allDeals = [];
+    let selectedCards = [];
+    let activeFilter = 'all';
 
     // Fetch and display deals
     async function fetchDeals() {
@@ -12,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderDeals(allDeals);
         } catch (error) {
             console.error('Error:', error);
-            container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals. Please try again later.</p>`;
+            container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals.</p>`;
         }
     }
 
@@ -29,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'card';
             card.style.animationDelay = `${index * 0.1}s`;
             
+            const isSelected = selectedCards.find(c => c.name === deal.name);
+            
             card.innerHTML = `
                 <div class="card-image-container">
-                    <img src="${deal.image}" alt="${deal.name}" class="card-img" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=${encodeURIComponent(deal.name)}'">
+                    <img src="${deal.image}" alt="${deal.name}" class="card-img" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=Card'">
                 </div>
                 <div class="bonus-tag">${deal.bonus}</div>
                 <h3>${deal.name}</h3>
@@ -44,43 +57,120 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Annual Fee</span>
                         <p>${deal.fee}</p>
                     </div>
-                    <div class="detail-item">
-                        <span>Credit Score</span>
-                        <p>${deal.credit_score}</p>
-                    </div>
-                    <div class="detail-item">
-                        <span>Category</span>
-                        <p style="text-transform: capitalize;">${deal.category.replace('-', ' ')}</p>
-                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="${deal.link}" class="btn btn-outline" style="width: 100%; text-align: center;">View Details</a>
+                <div class="card-actions">
+                    <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} compare-btn" data-name="${deal.name}">
+                        ${isSelected ? 'Selected' : 'Compare'}
+                    </button>
+                    <a href="${deal.link}" class="btn btn-primary">Apply Now</a>
                 </div>
             `;
             container.appendChild(card);
         });
+
+        // Add event listeners to compare buttons
+        document.querySelectorAll('.compare-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const name = e.target.getAttribute('data-name');
+                toggleCompare(name);
+            });
+        });
     }
 
-    // Filter handling
-    const searchInput = document.getElementById('search-input');
-    let activeFilter = 'all';
+    function toggleCompare(name) {
+        const deal = allDeals.find(d => d.name === name);
+        const index = selectedCards.findIndex(c => c.name === name);
+
+        if (index > -1) {
+            selectedCards.splice(index, 1);
+        } else {
+            if (selectedCards.length < 3) {
+                selectedCards.push(deal);
+            } else {
+                alert('You can only compare up to 3 cards at a time.');
+                return;
+            }
+        }
+
+        updateCompareBar();
+        applyFilters(); // Re-render to update button states
+    }
+
+    function updateCompareBar() {
+        if (selectedCards.length > 0) {
+            compareBar.style.display = 'flex';
+            compareCount.innerText = selectedCards.length;
+        } else {
+            compareBar.style.display = 'none';
+        }
+    }
+
+    function renderCompareTable() {
+        if (selectedCards.length === 0) return;
+
+        let tableHtml = `<table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Card</th>
+                    ${selectedCards.map(c => `<td><strong>${c.name}</strong></td>`).join('')}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Bonus</th>
+                    ${selectedCards.map(c => `<td>${c.bonus}</td>`).join('')}
+                </tr>
+                <tr>
+                    <th>Min. Spend</th>
+                    ${selectedCards.map(c => `<td>${c.spend}</td>`).join('')}
+                </tr>
+                <tr>
+                    <th>Annual Fee</th>
+                    ${selectedCards.map(c => `<td>${c.fee}</td>`).join('')}
+                </tr>
+                <tr>
+                    <th>Top Perk</th>
+                    ${selectedCards.map(c => `<td>${c.top_perk || 'Check site for details'}</td>`).join('')}
+                </tr>
+                <tr>
+                    <th>Action</th>
+                    ${selectedCards.map(c => `<td><a href="${c.link}" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px;">Apply Now</a></td>`).join('')}
+                </tr>
+            </tbody>
+        </table>`;
+
+        compareTableContainer.innerHTML = tableHtml;
+    }
+
+    // Event Listeners
+    compareNowBtn.addEventListener('click', () => {
+        renderCompareTable();
+        compareModal.style.display = 'block';
+    });
+
+    clearCompareBtn.addEventListener('click', () => {
+        selectedCards = [];
+        updateCompareBar();
+        renderDeals(allDeals);
+    });
+
+    closeModal.addEventListener('click', () => {
+        compareModal.style.display = 'none';
+    });
+
+    window.onclick = (event) => {
+        if (event.target == compareModal) {
+            compareModal.style.display = 'none';
+        }
+    };
 
     function applyFilters() {
         const query = searchInput.value.toLowerCase();
-        
         const filteredDeals = allDeals.filter(deal => {
-            const matchesCategory = activeFilter === 'all' 
-                ? true 
-                : (activeFilter === 'no-fee' 
-                    ? (deal.fee === '$0' || deal.fee.toLowerCase().includes('none'))
-                    : deal.category === activeFilter);
-            
-            const matchesSearch = deal.name.toLowerCase().includes(query) || 
-                                 deal.bonus.toLowerCase().includes(query);
-            
+            const matchesCategory = activeFilter === 'all' ? true : (activeFilter === 'no-fee' ? (deal.fee === '$0' || deal.fee.toLowerCase().includes('none')) : deal.category === activeFilter);
+            const matchesSearch = deal.name.toLowerCase().includes(query) || deal.bonus.toLowerCase().includes(query);
             return matchesCategory && matchesSearch;
         });
-        
         renderDeals(filteredDeals);
     }
 
