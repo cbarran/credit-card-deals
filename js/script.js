@@ -62,25 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Filter handling
+    const searchInput = document.getElementById('search-input');
+    let activeFilter = 'all';
+
+    function applyFilters() {
+        const query = searchInput.value.toLowerCase();
+        
+        const filteredDeals = allDeals.filter(deal => {
+            const matchesCategory = activeFilter === 'all' 
+                ? true 
+                : (activeFilter === 'no-fee' 
+                    ? (deal.fee === '$0' || deal.fee.toLowerCase().includes('none'))
+                    : deal.category === activeFilter);
+            
+            const matchesSearch = deal.name.toLowerCase().includes(query) || 
+                                 deal.bonus.toLowerCase().includes(query);
+            
+            return matchesCategory && matchesSearch;
+        });
+        
+        renderDeals(filteredDeals);
+    }
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active state
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-            
-            // Filter logic
-            const filteredDeals = filter === 'all' 
-                ? allDeals 
-                : allDeals.filter(deal => {
-                    if (filter === 'no-fee') return deal.fee === '$0' || deal.fee.toLowerCase().includes('none');
-                    return deal.category === filter;
-                });
-            
-            renderDeals(filteredDeals);
+            activeFilter = btn.getAttribute('data-filter');
+            applyFilters();
         });
     });
+
+    searchInput.addEventListener('input', applyFilters);
 
     fetchDeals();
 });
