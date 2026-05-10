@@ -19,6 +19,13 @@
                     <li><a href="#deals" class="active">Deals</a></li>
                     <li><a href="#">Guides</a></li>
                     <li><a href="#">Resources</a></li>
+                    <li class="alert-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="deal-alerts">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Alerts</span>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -27,8 +34,8 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Deals You <span class="gradient-text">Don't Want to Miss</span></h1>
-                <p>Unlock premium travel experiences and maximized rewards with our hand-picked credit card offers.</p>
+                <h1>Compare the Best Travel Cards in One Spot.</h1>
+                <p>We aren't a bank—we're your cheat sheet. We do the heavy lifting to find the biggest travel bonuses and lowest fees from major issuers so you can travel for less.</p>
                 <div class="hero-actions">
                     <a href="#deals" class="btn btn-primary">Browse Top Deals</a>
                     <a href="#" class="btn btn-outline">Learn More</a>
@@ -101,6 +108,15 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="newsletter-section">
+                <h3>Get Exclusive Deal Alerts</h3>
+                <p>Join 50,000+ points enthusiasts. We'll only email you when a "must-have" deal drops.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
             <div class="footer-content">
                 <p class="disclaimer">
                     <strong>Financial Disclaimer:</strong> This site is for informational purposes only. We may earn a commission from some of the credit card offers listed here, which helps support this site at no extra cost to you. Please read card terms and conditions carefully. 

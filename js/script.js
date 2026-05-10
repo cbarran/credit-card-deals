@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const compareModal = document.getElementById('compare-modal');
     const closeModal = document.querySelector('.close-modal');
     const compareTableContainer = document.getElementById('compare-table-container');
+    const alertToggle = document.getElementById('deal-alerts');
 
     let allDeals = [];
     let selectedCards = [];
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} compare-btn" data-name="${deal.name}">
                         ${isSelected ? 'Selected' : 'Compare'}
                     </button>
-                    <a href="${deal.link}" class="btn btn-primary">Apply Now</a>
+                    <a href="${deal.link}" class="btn btn-primary">View Offer</a>
                 </div>
             `;
             container.appendChild(card);
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </tr>
                 <tr>
                     <th>Action</th>
-                    ${selectedCards.map(c => `<td><a href="${c.link}" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px;">Apply Now</a></td>`).join('')}
+                    ${selectedCards.map(c => `<td><a href="${c.link}" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px;">View Offer</a></td>`).join('')}
                 </tr>
             </tbody>
         </table>`;
@@ -184,6 +185,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     searchInput.addEventListener('input', applyFilters);
+
+    // Newsletter Form Logic (Updated)
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const msg = document.getElementById('subscription-message');
+            
+            console.log("Subscribing:", email);
+            msg.textContent = "Thanks! You're on the list for exclusive alerts.";
+            msg.style.display = "block";
+            msg.style.color = "#4ade80";
+            newsletterForm.reset();
+        });
+    }
+
+    // Deal Alerts Toggle Logic (Mock)
+    if (alertToggle) {
+        alertToggle.addEventListener('change', () => {
+            if (alertToggle.checked) {
+                alert('Push notifications enabled! You will be alerted when new top-tier deals are found.');
+            } else {
+                console.log('Notifications disabled');
+            }
+        });
+    }
 
     fetchDeals();
 });

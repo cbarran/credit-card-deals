@@ -1,57 +1,57 @@
 [
   {
-    "name": "Chase Sapphire Reserve®",
+    "name": "Chase Sapphire Reserve\u00ae",
     "bonus": "150,000 bonus points",
-    "spend": "$6,000 on purchases in the first 3 months",
+    "spend": "$6,000",
     "fee": "$795",
-    "link": "https://thepointsguy.com/oc/221212097/",
+    "link": "/oc/221212097/?tid=",
     "category": "travel",
-    "credit_score": "740-850",
+    "credit_score": "700-850",
     "image": "https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2F083f25c0-504f-11f0-962e-072d632f0110.png&w=3840&q=75",
-    "top_perk": "$300 annual travel credit, lounge access, 8x points on Chase Travel"
+    "top_perk": "Earn 150,000 bonus points after you spend $6,000 on purchases in the first 3 months from account ope..."
   },
   {
-    "name": "Chase Sapphire Preferred® Card",
+    "name": "Chase Sapphire Preferred\u00ae Card",
     "bonus": "75,000 bonus points",
-    "spend": "$5,000 on purchases in the first 3 months",
+    "spend": "$5,000",
     "fee": "$95",
-    "link": "https://thepointsguy.com/oc/221210132/",
+    "link": "/oc/221210132/?tid=",
     "category": "travel",
     "credit_score": "700-850",
     "image": "https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2F4c935280-ed1a-11ee-a39c-cffd4c1d8271.png&w=3840&q=75",
-    "top_perk": "5x on travel via Chase, 3x on dining, $50 annual hotel credit"
+    "top_perk": "Earn 75,000 bonus points after you spend $5,000 on purchases in the first 3 months from account open..."
   },
   {
-    "name": "The Business Platinum Card® from American Express",
-    "bonus": "300,000 Membership Rewards® Points",
-    "spend": "$20,000 on purchases in the first 3 months",
+    "name": "The Business Platinum Card\u00ae from American Express",
+    "bonus": "As High As 300,000 points. Find Out Your Offer.",
+    "spend": "See details",
     "fee": "$895",
-    "link": "https://thepointsguy.com/oc/7758/",
-    "category": "business",
+    "link": "/oc/7758/?tid=",
+    "category": "travel",
     "credit_score": "700-850",
     "image": "https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2Fec6e5940-9498-11f0-96ae-9ba4a69e8e45.png&w=3840&q=75",
-    "top_perk": "5x on flights and hotels, Hilton/Marriott Gold status, Centurion Lounge access"
+    "top_perk": "You may be eligible for as high as 300,000 Membership Rewards\u00ae Points after spending $20,000 in elig..."
   },
   {
-    "name": "Capital One Venture Rewards Credit Card",
-    "bonus": "150,000 bonus miles",
-    "spend": "$7,500 in 3 months",
+    "name": "Capital One Venture Business",
+    "bonus": "Limited-time offer: Earn up to 150,000 bonus miles",
+    "spend": "$7,500",
     "fee": "$95",
-    "link": "https://thepointsguy.com/oc/22105772/",
+    "link": "/oc/11096/?tid=",
     "category": "travel",
     "credit_score": "700-850",
     "image": "https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2F1e140f40-2c46-11f1-9bba-716dfa6ed2cb.png&w=3840&q=75",
-    "top_perk": "Unlimited 2x miles on all purchases, 5x on hotels/cars via Capital One Travel"
+    "top_perk": "Limited-time offer: Earn up to 150,000 bonus miles\u201475,000 miles once you spend $7,500 in the first 3..."
   },
   {
-    "name": "American Express Platinum Card®",
-    "bonus": "175,000 Membership Rewards® Points",
-    "spend": "$12,000 on purchases in the first 6 months",
+    "name": "American Express Platinum Card\u00ae",
+    "bonus": "As High As 175,000 points. Find Out Your Offer.",
+    "spend": "See details",
     "fee": "$895",
-    "link": "https://thepointsguy.com/oc/96987490/",
+    "link": "/oc/22504813/?tid=",
     "category": "travel",
     "credit_score": "700-850",
     "image": "https://thepointsguy.com/_next/image/?url=https%3A%2F%2Fcdn.prodstatic.com%2Fshared%2Fimages%2Fcards%2F278x175%2F96987490-949f-11f0-832a-f3f3309a1b0c.png&w=3840&q=75",
-    "top_perk": "$200 annual hotel credit, $200 airline fee credit, and extensive lounge access"
+    "top_perk": "You may be eligible for as high as 175,000 Membership Rewards\u00ae Points after spending $12,000 in elig..."
   }
 ]

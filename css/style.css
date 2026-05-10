@@ -421,3 +421,132 @@ h1, h2, h3, .logo {
     font-weight: 500;
     width: 120px;
 }
+/* Alerts Toggle */
+.alert-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-left: 16px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #334155;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 60px;
+    border: 1px solid var(--border-color);
+}
+
+.newsletter-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.newsletter-section p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    outline: none;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--accent-primary);
+}
+
+@media (min-width: 768px) {
+    .newsletter-form { flex-direction: row; }
+}
+
+/* Footer Styling */
+.footer {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.disclaimer {
+    max-width: 800px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
