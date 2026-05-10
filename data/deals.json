@@ -1,16 +1,62 @@
 [
   {
-    "name": "Chase Sapphire Preferred",
+    "name": "Chase Sapphire Preferred® Card",
     "bonus": "60,000 Points",
     "spend": "$4,000 in 3 months",
     "fee": "$95",
-    "link": "#"
+    "link": "#",
+    "category": "travel",
+    "credit_score": "700-850",
+    "image": "assets/chase-sapphire.png"
   },
   {
-    "name": "Capital One Venture X",
+    "name": "Capital One Venture X Rewards Credit Card",
     "bonus": "75,000 Miles",
     "spend": "$4,000 in 3 months",
     "fee": "$395",
-    "link": "#"
+    "link": "#",
+    "category": "travel",
+    "credit_score": "740-850",
+    "image": "assets/venture-x.png"
+  },
+  {
+    "name": "American Express® Gold Card",
+    "bonus": "60,000 Points",
+    "spend": "$6,000 in 6 months",
+    "fee": "$250",
+    "link": "#",
+    "category": "travel",
+    "credit_score": "700-850",
+    "image": "assets/amex-gold.png"
+  },
+  {
+    "name": "Blue Cash Everyday® Card from American Express",
+    "bonus": "$200 Statement Credit",
+    "spend": "$2,000 in 6 months",
+    "fee": "$0",
+    "link": "#",
+    "category": "cashback",
+    "credit_score": "670-850",
+    "image": "assets/blue-cash.png"
+  },
+  {
+    "name": "Chase Freedom Flex℠",
+    "bonus": "$200 Bonus",
+    "spend": "$500 in 3 months",
+    "fee": "$0",
+    "link": "#",
+    "category": "cashback",
+    "credit_score": "670-850",
+    "image": "assets/freedom-flex.png"
+  },
+  {
+    "name": "Wells Fargo Autograph℠ Card",
+    "bonus": "20,000 Bonus Points",
+    "spend": "$1,000 in 3 months",
+    "fee": "$0",
+    "link": "#",
+    "category": "no-fee",
+    "credit_score": "670-850",
+    "image": "assets/wells-fargo.png"
   }
 ]

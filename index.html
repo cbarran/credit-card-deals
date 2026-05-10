@@ -2,20 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Top Travel Credit Card Deals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Card Deals | Best Travel & Rewards Offers</title>
+    <meta name="description" content="Discover curated credit card deals and premium travel rewards. Get the best bonuses and optimize your spending.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Top Travel Credit Card Deals</h1>
-    
-    <!-- AdSense Placeholder -->
-    <div class="ad-placeholder" style="background:#ddd; height:100px; margin:20px 0; text-align:center; line-height:100px;">AdSense Placeholder</div>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">Elite<span>Cards</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#deals" class="active">Deals</a></li>
+                    <li><a href="#">Guides</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div id="deals-container" class="deals-grid"></div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Deals You <span class="gradient-text">Don't Want to Miss</span></h1>
+                <p>Unlock premium travel experiences and maximized rewards with our hand-picked credit card offers.</p>
+                <div class="hero-actions">
+                    <a href="#deals" class="btn btn-primary">Browse Top Deals</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Financial Disclaimer -->
-    <footer style="margin-top:40px; font-size:0.8em; color:#777;">
-        <p>Disclaimer: This site is for informational purposes only. We may earn a commission from some of the credit card offers listed here, which helps support this site at no extra cost to you. Please read card terms and conditions carefully.</p>
+        <section id="deals" class="deals-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Current Top Offers</h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="travel">Travel</button>
+                        <button class="filter-btn" data-filter="cashback">Cashback</button>
+                        <button class="filter-btn" data-filter="no-fee">No Annual Fee</button>
+                    </div>
+                </div>
+                <div id="deals-container" class="deals-grid">
+                    <!-- Cards will be injected here -->
+                    <div class="loading-skeleton">
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- AdSense Placeholder -->
+            <div class="ad-placeholder">
+                <span>Advertisement</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Financial Disclaimer:</strong> This site is for informational purposes only. We may earn a commission from some of the credit card offers listed here, which helps support this site at no extra cost to you. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2024 Elite Card Deals. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
     <script src="js/script.js"></script>
 </body>

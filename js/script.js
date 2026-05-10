@@ -1,17 +1,86 @@
-fetch('data/deals.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('deals-container');
-        data.forEach(deal => {
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('deals-container');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let allDeals = [];
+
+    // Fetch and display deals
+    async function fetchDeals() {
+        try {
+            const response = await fetch('data/deals.json');
+            if (!response.ok) throw new Error('Failed to fetch deals');
+            allDeals = await response.json();
+            renderDeals(allDeals);
+        } catch (error) {
+            console.error('Error:', error);
+            container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals. Please try again later.</p>`;
+        }
+    }
+
+    function renderDeals(deals) {
+        container.innerHTML = '';
+        
+        if (deals.length === 0) {
+            container.innerHTML = '<p class="no-results">No deals found for this category.</p>';
+            return;
+        }
+
+        deals.forEach((deal, index) => {
             const card = document.createElement('div');
             card.className = 'card';
+            card.style.animationDelay = `${index * 0.1}s`;
+            
             card.innerHTML = `
-                <h2>${deal.name}</h2>
-                <div class="bonus">${deal.bonus}</div>
-                <div class="details">Spend: ${deal.spend}</div>
-                <div class="fee">Annual Fee: ${deal.fee}</div>
-                <a href="${deal.link}">Learn More</a>
+                <div class="card-image-container">
+                    <img src="${deal.image}" alt="${deal.name}" class="card-img" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=${encodeURIComponent(deal.name)}'">
+                </div>
+                <div class="bonus-tag">${deal.bonus}</div>
+                <h3>${deal.name}</h3>
+                <div class="card-details">
+                    <div class="detail-item">
+                        <span>Min. Spend</span>
+                        <p>${deal.spend}</p>
+                    </div>
+                    <div class="detail-item">
+                        <span>Annual Fee</span>
+                        <p>${deal.fee}</p>
+                    </div>
+                    <div class="detail-item">
+                        <span>Credit Score</span>
+                        <p>${deal.credit_score}</p>
+                    </div>
+                    <div class="detail-item">
+                        <span>Category</span>
+                        <p style="text-transform: capitalize;">${deal.category.replace('-', ' ')}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="${deal.link}" class="btn btn-outline" style="width: 100%; text-align: center;">View Details</a>
+                </div>
             `;
             container.appendChild(card);
         });
+    }
+
+    // Filter handling
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            
+            // Filter logic
+            const filteredDeals = filter === 'all' 
+                ? allDeals 
+                : allDeals.filter(deal => {
+                    if (filter === 'no-fee') return deal.fee === '$0' || deal.fee.toLowerCase().includes('none');
+                    return deal.category === filter;
+                });
+            
+            renderDeals(filteredDeals);
+        });
     });
+
+    fetchDeals();
+});
