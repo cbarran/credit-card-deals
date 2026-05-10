@@ -23,11 +23,12 @@ def scrape_travel_deals():
         
         for card in cards:
             name_el = card.select_one('.cardName')
-            bonus_el = card.select_one('.introOffer-C span:first-child')
+            # Using flexible selectors for fields that change frequently
+            bonus_el = card.select_one('div[class*="introOffer"] span:first-child') or card.select_one('.offerLabel span')
             fee_el = card.select_one('.annualFee strong')
             link_el = card.select_one('a.applyLink')
             details_el = card.select_one('.tooltipContent')
-            img_el = card.select_one('.cardImgContainer img')
+            img_el = card.select_one('.cardImage img') or card.select_one('img[class*="cardImage"]')
             
             if name_el:
                 name = name_el.get_text(strip=True)
@@ -58,7 +59,8 @@ def scrape_travel_deals():
                     "link": link,
                     "category": category,
                     "credit_score": "700-850",
-                    "image": image
+                    "image": image,
+                    "top_perk": details_text[:100] + "..." if details_text else "Check site for perks"
                 }
                 deals.append(deal)
         
