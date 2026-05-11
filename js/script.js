@@ -20,7 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('data/deals.json');
             if (!response.ok) throw new Error('Failed to fetch deals');
-            allDeals = await response.json();
+            const data = await response.json();
+            
+            // Handle the new structure {last_updated, deals, ...}
+            allDeals = data.deals || data; 
+            
+            if (data.last_updated) {
+                const badge = document.getElementById('last-updated-badge');
+                if (badge) badge.textContent = `| Last Scanned: ${data.last_updated}`;
+            }
+            
             renderDeals(allDeals);
         } catch (error) {
             console.error('Error:', error);

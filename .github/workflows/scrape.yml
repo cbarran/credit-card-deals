@@ -22,6 +22,9 @@ jobs:
           pip install requests beautifulsoup4
 
       - name: Run scraper
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python scraper.py
 
@@ -30,5 +33,4 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add data/deals.json
-          git commit -m "Update deals via automated scraper"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update deals via automated scraper" && git push)

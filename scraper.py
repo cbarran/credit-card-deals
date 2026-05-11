@@ -2,6 +2,30 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import re
+import os
+from datetime import datetime
+
+def send_telegram_message(message):
+    token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    
+    if not token or not chat_id:
+        print("Telegram credentials not found. Skipping notification.")
+        return
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {
+        "chat_id": chat_id,
+        "text": message,
+        "parse_mode": "HTML"
+    }
+    
+    try:
+        response = requests.post(url, json=payload)
+        response.raise_for_status()
+        print("Telegram message sent successfully.")
+    except Exception as e:
+        print(f"Failed to send Telegram message: {e}")
 
 def scrape_travel_deals():
     # URL targeting travel credit card deals
@@ -11,6 +35,13 @@ def scrape_travel_deals():
     }
     
     try:
+        # Load existing deals to compare
+        old_deals = []
+        if os.path.exists('data/deals.json'):
+            with open('data/deals.json', 'r') as f:
+                data = json.load(f)
+                old_deals = data.get('deals', [])
+
         print(f"Fetching {url}...")
         response = requests.get(url, headers=headers)
         response.raise_for_status()
@@ -65,8 +96,27 @@ def scrape_travel_deals():
                 deals.append(deal)
         
         if deals:
+            # Check for new deals to notify
+            old_names = {d['name'] for d in old_deals}
+            new_deals = [d for d in deals if d['name'] not in old_names]
+            
+            if new_deals:
+                msg = f"<b>🔥 {len(new_deals)} New Credit Card Deals Found!</b>\n\n"
+                for d in new_deals:
+                    msg += f"• <b>{d['name']}</b>: {d['bonus']}\n"
+                msg += f"\n<a href='https://cbarran.github.io/credit-card-deals/'>View all deals here</a>"
+                send_telegram_message(msg)
+
+            # Save data with metadata
+            output = {
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "deals_count": len(deals),
+                "deals": deals
+            }
+            
+            os.makedirs('data', exist_ok=True)
             with open('data/deals.json', 'w') as f:
-                json.dump(deals, f, indent=2)
+                json.dump(output, f, indent=2)
             print(f"Successfully scraped {len(deals)} deals.")
         else:
             print("No deals found. Selectors might have changed.")
