@@ -198,6 +198,17 @@ h1, h2, h3, .logo {
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
 }
 
+.featured-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.featured-actions .btn {
+    flex: 1;
+    min-width: 140px;
+}
+
 /* Grid & Filters - Mobile First */
 .section-header {
     margin-bottom: 32px;
@@ -312,10 +323,12 @@ h1, h2, h3, .logo {
 .card-actions {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .card-actions .btn {
     flex: 1;
+    min-width: 100px;
     padding: 10px;
     font-size: 0.9rem;
 }
