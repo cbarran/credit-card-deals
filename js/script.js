@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch and display deals
     async function fetchDeals() {
         try {
-            const response = await fetch('data/deals.json');
+            const response = await fetch('data/deals.json?t=' + new Date().getTime());
             if (!response.ok) throw new Error('Failed to fetch deals');
             const data = await response.json();
             
