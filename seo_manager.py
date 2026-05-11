@@ -6,15 +6,17 @@ def update_sitemap():
     with open('data/deals.json', 'r') as f:
         data = json.load(f)
         # Access the list under the 'deals' key if it exists, otherwise assume root is list
-        deals = data.get('deals', data)
+        deals = data
     
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += '  <url>\n    <loc>https://travelcard.info/</loc>\n    <lastmod>' + datetime.now().strftime('%Y-%m-%d') + '</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n'
     
     for deal in deals:
-        # Create a URL-safe slug
-        slug = deal['name'].lower().replace(' ', '-').replace('®', '').replace('℠', '')
+        # Create a URL-safe slug, handling potential missing names
+        slug = deal.get('Card Name', 'card').lower().replace(' ', '-').replace('®', '').replace('℠', '')
+        # Remove any remaining non-alphanumeric characters except hyphens
+        slug = "".join([c for c in slug if c.isalnum() or c == '-'])
         sitemap += f'  <url>\n    <loc>https://travelcard.info/card/{slug}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n'
     
     sitemap += '</urlset>'
