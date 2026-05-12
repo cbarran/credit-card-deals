@@ -40,7 +40,12 @@ def scrape_travel_deals():
         if os.path.exists('data/deals.json'):
             with open('data/deals.json', 'r') as f:
                 data = json.load(f)
-                old_deals = data.get('deals', [])
+                # Ensure we handle the structure correctly: 
+                # Our scraper expects a dict with 'deals', but process_excel outputs a raw list.
+                if isinstance(data, dict):
+                    old_deals = data.get('deals', [])
+                else:
+                    old_deals = data
 
         print(f"Fetching {url}...")
         response = requests.get(url, headers=headers)
@@ -97,8 +102,8 @@ def scrape_travel_deals():
         
         if deals:
             # Check for new deals to notify
-            old_names = {d['name'] for d in old_deals}
-            new_deals = [d for d in deals if d['name'] not in old_names]
+            old_names = {d.get('name', '') for d in old_deals}
+            new_deals = [d for d in deals if d.get('name', '') not in old_names]
             
             if new_deals:
                 msg = f"<b>🔥 {len(new_deals)} New Credit Card Deals Found!</b>\n\n"

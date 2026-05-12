@@ -52,30 +52,59 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const isSelected = selectedCards.find(c => c.name === deal.name);
             
+            // Map new schema fields
+            const bonus = deal.signup_bonus || 'Check site';
+            const spend = deal.min_spend_requirement || 'Not available';
+            const fee = deal.annual_fee || 'Not available';
+            const artImage = deal.art_image_url || 'assets/chase-sapphire.png';
+            const realImage = deal.image_url || deal.card_image_url || 'assets/chase-sapphire.png';
+            const link = deal.application_link || deal.link || '#';
+
             card.innerHTML = `
-                <div class="card-image-container">
-                    <img src="${deal.image}" alt="${deal.name}" class="card-img" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=Card'">
+                <div class="card-flip-container" tabindex="0">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="${artImage}" alt="${deal.name} Art" class="card-img-flip" onerror="this.src='${realImage}'">
+                        </div>
+                        <div class="card-back">
+                            <img src="${realImage}" alt="${deal.name} Card" class="card-img-flip" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=Card'">
+                        </div>
+                    </div>
                 </div>
-                <div class="bonus-tag">${deal.bonus}</div>
+                <div class="bonus-tag">${bonus}</div>
                 <h3>${deal.name}</h3>
                 <div class="card-details">
                     <div class="detail-item">
                         <span>Min. Spend</span>
-                        <p>${deal.spend}</p>
+                        <p>${spend}</p>
                     </div>
                     <div class="detail-item">
                         <span>Annual Fee</span>
-                        <p>${deal.fee}</p>
+                        <p>${fee}</p>
                     </div>
                 </div>
                 <div class="card-actions">
                     <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} compare-btn" data-name="${deal.name}">
                         ${isSelected ? 'Selected' : 'Compare'}
                     </button>
-                    <a href="${deal.link}" class="btn btn-primary">View Offer</a>
+                    <a href="${link}" class="btn btn-primary" target="_blank" rel="noopener">View Offer</a>
                 </div>
             `;
             container.appendChild(card);
+            
+            // Add mobile tap support for flip
+            const flipContainer = card.querySelector('.card-flip-container');
+            flipContainer.addEventListener('click', (e) => {
+                if (!e.target.closest('.card-actions')) {
+                    flipContainer.classList.toggle('active');
+                }
+            });
+            // Keyboard focus support
+            flipContainer.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    flipContainer.classList.toggle('active');
+                }
+            });
         });
 
         // Add event listeners to compare buttons
@@ -128,15 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <tbody>
                 <tr>
                     <th>Bonus</th>
-                    ${selectedCards.map(c => `<td>${c.bonus}</td>`).join('')}
+                    ${selectedCards.map(c => `<td>${c.signup_bonus || c.bonus}</td>`).join('')}
                 </tr>
                 <tr>
                     <th>Min. Spend</th>
-                    ${selectedCards.map(c => `<td>${c.spend}</td>`).join('')}
+                    ${selectedCards.map(c => `<td>${c.min_spend_requirement || c.spend}</td>`).join('')}
                 </tr>
                 <tr>
                     <th>Annual Fee</th>
-                    ${selectedCards.map(c => `<td>${c.fee}</td>`).join('')}
+                    ${selectedCards.map(c => `<td>${c.annual_fee || c.fee}</td>`).join('')}
                 </tr>
                 <tr>
                     <th>Top Perk</th>
@@ -177,8 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyFilters() {
         const query = searchInput.value.toLowerCase();
         const filteredDeals = allDeals.filter(deal => {
-            const matchesCategory = activeFilter === 'all' ? true : (activeFilter === 'no-fee' ? (deal.fee === '$0' || deal.fee.toLowerCase().includes('none')) : deal.category === activeFilter);
-            const matchesSearch = deal.name.toLowerCase().includes(query) || deal.bonus.toLowerCase().includes(query);
+            const matchesCategory = activeFilter === 'all' ? true : (activeFilter === 'no-fee' ? (deal.annual_fee === '$0' || (deal.annual_fee && deal.annual_fee.toLowerCase().includes('none'))) : deal.category === activeFilter);
+            const matchesSearch = (deal.name && deal.name.toLowerCase().includes(query)) || (deal.signup_bonus && deal.signup_bonus.toLowerCase().includes(query));
             return matchesCategory && matchesSearch;
         });
         renderDeals(filteredDeals);
