@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const alertToggle = document.getElementById('deal-alerts');
 
     let allDeals = [];
-    let selectedCards = [];
+    let comparisonTray = [];
     let activeFilter = 'all';
 
     // Calculator inputs
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'card';
             card.style.animationDelay = `${index * 0.1}s`;
             
-            const isSelected = selectedCards.find(c => c.name === deal.name);
+            const isSelected = comparisonTray.includes(deal.name);
             
             // Map new schema fields
             const bonus = deal.signup_bonus || 'Check site';
@@ -425,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--mood-accent', '#38bdf8');
     }
 
-    let comparisonTray = [];
 
     function updateComparisonBar() {
         const bar = document.getElementById('comparison-bar');
@@ -443,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderComparison() {
         const container = document.getElementById('comparison-table-container');
-        const selectedDeals = window.deals.filter(d => comparisonTray.includes(d.name));
+        const selectedDeals = allDeals.filter(d => comparisonTray.includes(d.name));
         
         if (selectedDeals.length === 0) {
             container.innerHTML = '<p class="empty-msg">Select at least one card to compare.</p>';
@@ -513,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('clear-comp-btn').addEventListener('click', () => {
         comparisonTray = [];
         updateComparisonBar();
-        renderDeals(window.deals); // Reset button states
+        renderDeals(allDeals); // Reset button states
     });
 
     document.querySelector('.close-modal').addEventListener('click', () => {

@@ -158,26 +158,24 @@
         </div>
     </footer>
     <!-- Comparison Bar -->
-    <div id="compare-bar" class="compare-bar">
-        <div class="compare-info">
-            <p><span id="compare-count">0</span> cards selected</p>
-        </div>
-        <div class="compare-actions">
-            <button id="clear-compare" class="btn btn-outline" style="padding: 8px 16px; margin-right: 8px; font-size: 0.8rem;">Clear</button>
-            <button id="compare-now" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">Compare Now</button>
+    <div id="comparison-bar" class="comparison-bar">
+        <div class="container">
+            <div class="comp-tray" id="comp-tray">
+                <!-- Selected cards will appear here -->
+            </div>
+            <div class="comp-actions">
+                <button id="compare-now-btn" class="button-primary">Compare Now</button>
+                <button id="clear-comp-btn" class="button-secondary">Clear</button>
+            </div>
         </div>
     </div>
 
     <!-- Comparison Modal -->
-    <div id="compare-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Compare Cards</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div id="compare-table-container">
-                <!-- Comparison table will be injected here -->
-            </div>
+    <div id="comparison-modal" class="modal">
+        <div class="modal-content comparison-overlay">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Side-by-Side Analysis</h2>
+            <div id="comparison-table-container"></div>
         </div>
     </div>
 
