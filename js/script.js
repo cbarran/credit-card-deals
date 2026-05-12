@@ -375,24 +375,34 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let html = `<table class="comp-matrix">
-            <tr>
-                <th>Feature</th>
-                ${selectedDeals.map(d => `<th class="comp-card-name">${d.name}</th>`).join('')}
-            </tr>
-            <tr>
-                <td>Signup Bonus</td>
-                ${selectedDeals.map(d => `<td class="winner-cell">${d.signup_bonus || 'N/A'}</td>`).join('')}
-            </tr>
-            <tr>
-                <td>Annual Fee</td>
-                ${selectedDeals.map(d => `<td>${d.annual_fee || 'N/A'}</td>`).join('')}
-            </tr>
-            <tr>
-                <td>Action</td>
-                ${selectedDeals.map(d => `<td><a href="${d.application_link || d.link || '#'}" class="button-primary" style="font-size: 0.75rem; padding: 10px;" target="_blank">View Offer</a></td>`).join('')}
-            </tr>
-        </table>`;
+        let html = `<div class="comp-table-wrapper">
+            <table class="comp-matrix">
+                <thead>
+                    <tr>
+                        <th class="sticky-col">Feature</th>
+                        ${selectedDeals.map(d => `<th class="comp-card-name">${d.name}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sticky-col">Signup Bonus</td>
+                        ${selectedDeals.map(d => `<td class="winner-cell">${d.signup_bonus || 'N/A'}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="sticky-col">Annual Fee</td>
+                        ${selectedDeals.map(d => `<td>${d.annual_fee || 'N/A'}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="sticky-col">Top Benefit</td>
+                        ${selectedDeals.map(d => `<td class="verdict-cell"><em>${d.key_benefits ? d.key_benefits[0] : 'Exclusive perks'}</em></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <td class="sticky-col">Action</td>
+                        ${selectedDeals.map(d => `<td><a href="${d.application_link || d.link || '#'}" class="button-primary" style="font-size: 0.75rem; padding: 10px;" target="_blank">View Offer</a></td>`).join('')}
+                    </tr>
+                </tbody>
+            </table>
+        </div>`;
         
         container.innerHTML = html;
     }
