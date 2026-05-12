@@ -45,36 +45,41 @@
             <div class="hero-liquid-bg"></div>
             <div class="container">
                 <div class="hero-text-centered">
-                    <h1>Travel Card Data Aggregator</h1>
-                    <p>Aggregated data on travel bonuses, fees, and rewards multipliers from major issuers. Comparative analysis for informational purposes.</p>
+                    <h1>The simple way to compare travel cards.</h1>
+                    <p>We've put all the card bonuses and fees in one place so you don't have to spend hours researching. It's just the facts, designed to save you time.</p>
                     <div class="hero-actions">
-                        <a href="#deals" class="btn btn-primary">Access Card Database</a>
-                        <a href="about.html" class="btn btn-outline">Data Methodology</a>
+                        <a href="#deals" class="btn btn-primary">Browse the cards</a>
+                        <a href="about.html" class="btn btn-outline">About us</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="rewards-calculator">
-            <div class="container">
+        <div class="floating-calc-widget" id="calc-widget">
+            <button class="calc-toggle" id="calc-toggle">
+                <span class="calc-icon">📊</span>
+                <span class="calc-text">How much will I earn?</span>
+            </button>
+            <div class="calc-content">
                 <div class="calc-inner">
                     <div class="calc-header">
-                        <span><strong>Rewards Calculator:</strong> Estimated Annual Yield</span>
+                        <span><strong>How much you'll earn in a year:</strong></span>
                     </div>
                     <div class="calc-inputs">
                         <div class="calc-field">
-                            <label>Dining/mo</label>
+                            <label>Eating out</label>
                             <input type="number" id="calc-dining" value="500" step="50">
                         </div>
                         <div class="calc-field">
-                            <label>Travel/mo</label>
+                            <label>Travel</label>
                             <input type="number" id="calc-travel" value="200" step="50">
                         </div>
                         <div class="calc-field">
-                            <label>Grocery/mo</label>
+                            <label>Groceries</label>
                             <input type="number" id="calc-grocery" value="400" step="50">
                         </div>
                     </div>
+                    <p class="calc-disclaimer">These are estimates based on standard multipliers.</p>
                 </div>
             </div>
         </div>
@@ -82,7 +87,7 @@
         <section id="deals" class="deals-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Card Database</h2>
+                    <h2>Browse the cards</h2>
                     <div class="search-filter-group">
                         <div class="search-box">
                             <input type="text" id="search-input" placeholder="Search cards (e.g. Chase)...">
@@ -117,8 +122,8 @@
     <footer class="footer">
         <div class="container">
             <div class="newsletter-section">
-                <h3>Data Update Notifications</h3>
-                <p>Submit your email to receive notifications when the card dataset is updated.</p>
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
                 <form id="newsletter-form" class="newsletter-form">
                     <input type="email" id="email-input" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-primary">Subscribe</button>

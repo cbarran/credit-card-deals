@@ -110,11 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="magic-earnings-badge">
-                    Est. Annual Yield: ${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}
+                    What you'll earn in a year: ${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}
                 </div>
                 <div class="bonus-row">
                     <div class="bonus-tag">${bonus}</div>
-                    ${bonusValue ? `<div class="value-badge">Est. Value: ${bonusValue}</div>` : ''}
+                    ${bonusValue ? `<div class="value-badge">Estimated Value: ${bonusValue}</div>` : ''}
                 </div>
                 <h3>${deal.name}</h3>
                 
@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>` : ''}
 
                 <div class="card-footer">
-                    <a href="${link}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">External Issuer Site</a>
+                    <a href="${link}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">See details at the bank</a>
                     <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} btn-sm compare-btn" data-name="${deal.name}">
-                        ${isSelected ? 'Selected' : 'Compare Data'}
+                        ${isSelected ? 'Selected' : 'Compare'}
                     </button>
                 </div>
             `;
@@ -305,6 +305,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // Toggle Floating Calculator
+    const calcWidget = document.getElementById('calc-widget');
+    const calcToggle = document.getElementById('calc-toggle');
+    if (calcWidget && calcToggle) {
+        calcToggle.addEventListener('click', () => {
+            calcWidget.classList.toggle('active');
+        });
+    }
 
     // Newsletter Form Logic (Updated)
     const newsletterForm = document.getElementById('newsletter-form');

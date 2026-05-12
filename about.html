@@ -3,18 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About TravelCard.info | Our Mission</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>About us | TravelCard.info</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <style>
-        .about-content { padding: 120px 20px 60px; max-width: 800px; margin: 0 auto; color: #f8fafc; }
+        .about-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            padding: 60px 40px;
+            border-radius: 24px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mission-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        .mission-oneliner {
+            font-size: 1.75rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: white;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+        .about-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.2s;
+        }
+        .back-home:hover {
+            gap: 12px;
+        }
     </style>
 </head>
 <body>
-    <main class="about-content">
-        <h1>About TravelCard.info</h1>
-        <p>TravelCard.info was created as an independent resource for travelers to easily compare the best credit card offers in one place.</p>
-        <p>We do not hold any bias and are not affiliated with the banks. Our mission is to provide you with the most up-to-date data so you can make an informed decision for your next travel goal.</p>
-        <a href="index.html">← Back to Home</a>
-    </main>
+    <div class="about-page">
+        <div class="hero-liquid-bg"></div>
+        <div class="container">
+            <main class="about-card">
+                <span class="mission-tag">The Mission</span>
+                <h1 class="mission-oneliner">We organize the details into a simple cheat sheet so you can find your next travel reward in seconds—not hours.</h1>
+                
+                <div class="about-text">
+                    <p>Researching credit cards is time-consuming. Between point valuations, annual fees, and fine-print, finding the right card can feel overwhelming.</p>
+                    <p><strong>TravelCard.info</strong> was built to do the heavy lifting for you. We provide an independent cheat sheet of current issuer data so you can compare rewards purely on the facts.</p>
+                    <p>We are not a bank, and we don't favor one card over another. Our only goal is to give you the clear data you need to save time and travel more.</p>
+                </div>
+
+                <a href="index.html" class="back-home">
+                    <span>← Back to Card Collection</span>
+                </a>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
