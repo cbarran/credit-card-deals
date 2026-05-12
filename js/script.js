@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedCards = [];
     let activeFilter = 'all';
 
+    // Calculator inputs
+    const diningInput = document.getElementById('calc-dining');
+    const travelInput = document.getElementById('calc-travel');
+    const groceryInput = document.getElementById('calc-grocery');
+
     // Fetch and display deals
     async function fetchDeals() {
         // CORS Bypass: Check if data was pre-loaded via script tag
@@ -76,6 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const creditScore = deal.credit_score_required || 'Good to Excellent';
             const bonusValue = deal.bonus_value_estimate ? `$${deal.bonus_value_estimate}` : null;
 
+            // Magic Rewards Calculation
+            const dSpend = parseFloat(diningInput.value) || 0;
+            const tSpend = parseFloat(travelInput.value) || 0;
+            const gSpend = parseFloat(groceryInput.value) || 0;
+            
+            const dRate = parseFloat(deal.rewards_rate_dining) || 1;
+            const tRate = parseFloat(deal.rewards_rate_travel) || 1;
+            const gRate = parseFloat(deal.rewards_rate_grocery) || 1;
+            const oRate = parseFloat(deal.rewards_rate_other) || 1;
+
+            const annualEarnings = ((dSpend * dRate) + (tSpend * tRate) + (gSpend * gRate)) * 12;
+            const pointsCurrency = deal.points_currency || 'Points';
+
             card.innerHTML = `
                 ${bestFor ? `<div class="best-for-badge">${bestFor}</div>` : ''}
                 <div class="card-flip-container" tabindex="0">
@@ -87,6 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="${realImage}" alt="${deal.name} Card" class="card-img-flip" onerror="this.src='assets/placeholder-card.png'">
                         </div>
                     </div>
+                </div>
+                <div class="magic-earnings-badge">
+                    <span class="sparkle">✨</span> You'll earn ~${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}/yr
                 </div>
                 <div class="bonus-row">
                     <div class="bonus-tag">${bonus}</div>
@@ -259,6 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     searchInput.addEventListener('input', applyFilters);
+
+    // Calculator event listeners
+    [diningInput, travelInput, groceryInput].forEach(input => {
+        if (input) {
+            input.addEventListener('input', () => {
+                applyFilters();
+            });
+        }
+    });
 
     // Newsletter Form Logic (Updated)
     const newsletterForm = document.getElementById('newsletter-form');
