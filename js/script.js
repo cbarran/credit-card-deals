@@ -17,12 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fetch and display deals
     async function fetchDeals() {
+        // CORS Bypass: Check if data was pre-loaded via script tag
+        if (window.DEALS_DATA) {
+            console.log('Using pre-loaded DEALS_DATA (CORS Bypass active)');
+            allDeals = window.DEALS_DATA.deals || window.DEALS_DATA;
+            if (window.DEALS_DATA.last_updated) {
+                const badge = document.getElementById('last-updated-badge');
+                if (badge) badge.textContent = `| Last Scanned: ${window.DEALS_DATA.last_updated}`;
+            }
+            renderDeals(allDeals);
+            return;
+        }
+
         try {
             const response = await fetch('data/deals.json?t=' + new Date().getTime());
             if (!response.ok) throw new Error('Failed to fetch deals');
             const data = await response.json();
             
-            // Handle the new structure {last_updated, deals, ...}
             allDeals = data.deals || data; 
             
             if (data.last_updated) {
@@ -33,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderDeals(allDeals);
         } catch (error) {
             console.error('Error:', error);
-            container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals.</p>`;
+            container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals. Please refresh or try running through a local server.</p>`;
         }
     }
 
