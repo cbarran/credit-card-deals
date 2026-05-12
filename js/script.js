@@ -4,11 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const compareBar = document.getElementById('compare-bar');
     const compareCount = document.getElementById('compare-count');
-    const compareNowBtn = document.getElementById('compare-now');
-    const clearCompareBtn = document.getElementById('clear-compare');
-    const compareModal = document.getElementById('compare-modal');
-    const closeModal = document.querySelector('.close-modal');
-    const compareTableContainer = document.getElementById('compare-table-container');
+    const compareNowBtn = document.getElementById('compare-now-btn');
+    const clearCompareBtn = document.getElementById('clear-comp-btn');
+    const compModal = document.getElementById('comparison-modal');
+    const compareTableContainer = document.getElementById('comparison-table-container');
     const alertToggle = document.getElementById('deal-alerts');
 
     let allDeals = [];
@@ -183,101 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }, {passive: true});
         });
 
-        // Add event listeners to compare buttons
-        document.querySelectorAll('.compare-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const name = e.target.getAttribute('data-name');
-                toggleCompare(name);
-            });
-        });
+
+        // Selection state is now handled by the unified click listener at the bottom.
     }
 
-    function toggleCompare(name) {
-        const deal = allDeals.find(d => d.name === name);
-        const index = selectedCards.findIndex(c => c.name === name);
 
-        if (index > -1) {
-            selectedCards.splice(index, 1);
-        } else {
-            if (selectedCards.length < 3) {
-                selectedCards.push(deal);
-            } else {
-                alert('You can only compare up to 3 cards at a time.');
-                return;
-            }
-        }
 
-        updateCompareBar();
-        applyFilters(); // Re-render to update button states
-    }
+    // Unified comparison engine handles actions below
 
-    function updateCompareBar() {
-        if (selectedCards.length > 0) {
-            compareBar.style.display = 'flex';
-            compareCount.innerText = selectedCards.length;
-        } else {
-            compareBar.style.display = 'none';
-        }
-    }
-
-    function renderCompareTable() {
-        if (selectedCards.length === 0) return;
-
-        let tableHtml = `<table class="compare-table">
-            <thead>
-                <tr>
-                    <th>Card</th>
-                    ${selectedCards.map(c => `<td><strong>${c.name}</strong></td>`).join('')}
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Bonus</th>
-                    ${selectedCards.map(c => `<td>${c.signup_bonus || c.bonus}</td>`).join('')}
-                </tr>
-                <tr>
-                    <th>Min. Spend</th>
-                    ${selectedCards.map(c => `<td>${c.min_spend_requirement || c.spend}</td>`).join('')}
-                </tr>
-                <tr>
-                    <th>Annual Fee</th>
-                    ${selectedCards.map(c => `<td>${c.annual_fee || c.fee}</td>`).join('')}
-                </tr>
-                <tr>
-                    <th>Top Perk</th>
-                    ${selectedCards.map(c => `<td>${c.top_perk || 'Check site for details'}</td>`).join('')}
-                </tr>
-                <tr>
-                    <th>Action</th>
-                    ${selectedCards.map(c => `<td><a href="${c.link}" class="btn btn-primary" style="font-size: 0.8rem; padding: 8px;">View Offer</a></td>`).join('')}
-                </tr>
-            </tbody>
-        </table>`;
-
-        compareTableContainer.innerHTML = tableHtml;
-    }
-
-    // Event Listeners
-    compareNowBtn.addEventListener('click', () => {
-        renderCompareTable();
-        compareModal.style.display = 'block';
-    });
-
-    clearCompareBtn.addEventListener('click', () => {
-        selectedCards = [];
-        updateCompareBar();
-        renderDeals(allDeals);
-    });
-
-    closeModal.addEventListener('click', () => {
-        compareModal.style.display = 'none';
-    });
-
-    window.onclick = (event) => {
-        if (event.target == compareModal) {
-            compareModal.style.display = 'none';
-        }
-    };
 
     function applyFilters() {
         const query = searchInput.value.toLowerCase();
