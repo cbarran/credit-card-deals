@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderDeals(allDeals); // Reset button states
     });
 
-    document.querySelector('.close-modal').addEventListener('click', () => {
+    compModal.querySelector('.close-modal').addEventListener('click', () => {
         compModal.style.display = 'none';
     });
 
