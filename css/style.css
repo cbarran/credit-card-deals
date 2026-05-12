@@ -170,15 +170,16 @@ body {
 
 .card-footer {
     display: flex;
-    flex-direction: column;
     gap: 12px;
+    margin-top: 10px;
 }
 
 .button-primary {
+    flex: 2;
     background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
     color: #020617;
     border: none;
-    padding: 14px;
+    padding: 14px 10px;
     border-radius: 14px;
     font-weight: 800;
     cursor: pointer;
@@ -186,7 +187,8 @@ body {
     text-align: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .button-primary:hover {
@@ -196,17 +198,18 @@ body {
 }
 
 .button-secondary {
+    flex: 1;
     background: rgba(255, 255, 255, 0.05);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 12px;
+    padding: 14px 10px;
     border-radius: 14px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
     transition: all 0.2s;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .button-secondary:hover {
@@ -216,26 +219,105 @@ body {
 }
 
 .calc-toggle {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-weight: 700;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    color: #020617;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 800;
     cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s;
+    border: none;
 }
 
-.calc-toggle:hover {
-    transform: scale(1.05);
-    background: white;
+/* Comparison Engine Styles */
+.comparison-bar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 16px 0;
+    z-index: 2000;
+    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.calc-content {
+.comparison-bar.active {
+    bottom: 0;
+}
+
+.comparison-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comp-tray {
+    display: flex;
+    gap: 12px;
+}
+
+.tray-item {
+    background: rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.comp-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.comparison-overlay {
+    max-width: 1200px !important;
+    width: 95% !important;
+}
+
+.comp-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.comp-matrix th, .comp-matrix td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.comp-matrix th {
+    background: rgba(255,255,255,0.05);
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.comp-matrix td {
+    color: var(--text-secondary);
+}
+
+.winner-cell {
+    color: var(--accent-primary) !important;
+    font-weight: 800;
+}
+
+.comp-card-name {
+    color: white;
+    font-weight: 700;
+}
     background: rgba(30, 41, 59, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);

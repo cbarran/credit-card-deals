@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>` : ''}
 
                 <div class="card-footer">
-                    <a href="${link}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">See details at the bank</a>
-                    <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} btn-sm compare-btn" data-name="${deal.name}">
+                    <a href="${link}" class="button-primary" target="_blank" rel="noopener noreferrer">View Official Offer</a>
+                    <button class="button-secondary compare-btn" data-name="${deal.name}">
                         ${isSelected ? 'Selected' : 'Compare'}
                     </button>
                 </div>
@@ -381,6 +381,101 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--mood-bg', '#0f172a');
         document.documentElement.style.setProperty('--mood-accent', '#38bdf8');
     }
+
+    let comparisonTray = [];
+
+    function updateComparisonBar() {
+        const bar = document.getElementById('comparison-bar');
+        const tray = document.getElementById('comp-tray');
+        
+        if (comparisonTray.length > 0) {
+            bar.classList.add('active');
+            tray.innerHTML = comparisonTray.map(name => `
+                <div class="tray-item">${name}</div>
+            `).join('');
+        } else {
+            bar.classList.remove('active');
+        }
+    }
+
+    function renderComparison() {
+        const container = document.getElementById('comparison-table-container');
+        const selectedDeals = window.deals.filter(d => comparisonTray.includes(d.name));
+        
+        if (selectedDeals.length === 0) {
+            container.innerHTML = '<p class="empty-msg">Select at least one card to compare.</p>';
+            return;
+        }
+
+        let html = `<table class="comp-matrix">
+            <tr>
+                <th>Feature</th>
+                ${selectedDeals.map(d => `<th class="comp-card-name">${d.name}</th>`).join('')}
+            </tr>
+            <tr>
+                <td>Signup Bonus</td>
+                ${selectedDeals.map(d => {
+                    const val = parseInt(d.signup_bonus?.replace(/[^0-9]/g, '') || 0);
+                    const isWinner = selectedDeals.every(other => val >= parseInt(other.signup_bonus?.replace(/[^0-9]/g, '') || 0));
+                    return `<td class="${isWinner ? 'winner-cell' : ''}">${d.signup_bonus || 'N/A'}</td>`;
+                }).join('')}
+            </tr>
+            <tr>
+                <td>Annual Fee</td>
+                ${selectedDeals.map(d => {
+                    const feeVal = parseInt(d.annual_fee?.replace(/[^0-9]/g, '') || 0);
+                    const isWinner = selectedDeals.every(other => feeVal <= parseInt(other.annual_fee?.replace(/[^0-9]/g, '') || 9999));
+                    return `<td class="${isWinner ? 'winner-cell' : ''}">${d.annual_fee || 'N/A'}</td>`;
+                }).join('')}
+            </tr>
+            <tr>
+                <td>Expert Take</td>
+                ${selectedDeals.map(d => `<td class="verdict-cell"><em>${d.best_for ? `Masterclass for ${d.best_for.toLowerCase()}` : 'Dependable daily driver'}</em></td>`).join('')}
+            </tr>
+            <tr>
+                <td>Action</td>
+                ${selectedDeals.map(d => `<td><a href="${d.link}" class="button-primary" style="font-size: 0.75rem; padding: 10px;" target="_blank">View Offer</a></td>`).join('')}
+            </tr>
+        </table>`;
+        
+        container.innerHTML = html;
+    }
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('compare-btn')) {
+            const name = e.target.getAttribute('data-name');
+            if (comparisonTray.includes(name)) {
+                comparisonTray = comparisonTray.filter(n => n !== name);
+                e.target.classList.remove('active');
+                e.target.textContent = 'Compare';
+            } else {
+                if (comparisonTray.length >= 3) {
+                    alert("Max 3 cards for a fair fight!");
+                    return;
+                }
+                comparisonTray.push(name);
+                e.target.classList.add('active');
+                e.target.textContent = 'Selected';
+            }
+            updateComparisonBar();
+        }
+    });
+
+    const compModal = document.getElementById('comparison-modal');
+    document.getElementById('compare-now-btn').addEventListener('click', () => {
+        renderComparison();
+        compModal.style.display = 'block';
+    });
+
+    document.getElementById('clear-comp-btn').addEventListener('click', () => {
+        comparisonTray = [];
+        updateComparisonBar();
+        renderDeals(window.deals); // Reset button states
+    });
+
+    document.querySelector('.close-modal').addEventListener('click', () => {
+        compModal.style.display = 'none';
+    });
 
     fetchDeals();
 });
