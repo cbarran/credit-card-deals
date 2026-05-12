@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="magic-earnings-badge">
-                    <span class="sparkle">✨</span> You'll earn ~${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}/yr
+                    Est. Annual Yield: ${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}
                 </div>
                 <div class="bonus-row">
                     <div class="bonus-tag">${bonus}</div>
@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     </ul>
                 </div>` : ''}
 
-                <div class="card-actions">
-                    <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} compare-btn" data-name="${deal.name}">
-                        ${isSelected ? 'Selected' : 'Compare'}
+                <div class="card-footer">
+                    <a href="${link}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">External Issuer Site</a>
+                    <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} btn-sm compare-btn" data-name="${deal.name}">
+                        ${isSelected ? 'Selected' : 'Compare Data'}
                     </button>
-                    <a href="${link}" class="btn btn-primary" target="_blank" rel="noopener">View Offer</a>
                 </div>
             `;
             container.appendChild(card);
