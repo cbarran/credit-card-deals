@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Travel Guides & Insights | TravelCard.info</title>
+    <title>NYC Insider Series | TravelCard.info</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -16,14 +16,15 @@
             border: 1px solid var(--border-color); 
             border-radius: 24px; 
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s, border-color 0.3s;
             text-decoration: none;
             display: flex;
             flex-direction: column;
         }
         .guide-item:hover { transform: translateY(-10px); border-color: var(--accent-primary); }
-        .guide-thumb { height: 180px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-        .guide-meta-box { padding: 24px; }
+        .guide-thumb { height: 200px; background-size: cover; background-position: center; position: relative; }
+        .guide-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.8)); }
+        .guide-meta-box { padding: 24px; flex-grow: 1; }
         .guide-tag { color: var(--accent-primary); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 8px; display: block; }
         .guide-title-box { color: white; font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
         .guide-excerpt { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
@@ -44,7 +45,7 @@
             </nav>
         </div>
     </header>
-    
+
     <header class="guides-hero">
         <div class="container">
             <h1 class="guide-title">NYC Insider Series</h1>
@@ -55,7 +56,7 @@
     <main class="container">
         <div class="guides-grid">
             <a href="guide-nyc-arrival.html" class="guide-item">
-                <div class="guide-thumb">🚕</div>
+                <div class="guide-thumb" style="background-image: url('assets/arrival.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">The First Move</span>
                     <h2 class="guide-title-box">Arrival Strategy: JFK & LGA Guide</h2>
@@ -64,7 +65,7 @@
             </a>
 
             <a href="guide-nyc-food.html" class="guide-item">
-                <div class="guide-thumb">🍕</div>
+                <div class="guide-thumb" style="background-image: url('assets/pizza.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">Dining Guide</span>
                     <h2 class="guide-title-box">Essential Bites: The NYC Food Tour</h2>
@@ -73,7 +74,7 @@
             </a>
 
             <a href="guide-nyc-culture.html" class="guide-item">
-                <div class="guide-thumb">🎭</div>
+                <div class="guide-thumb" style="background-image: url('assets/culture.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">Culture & Arts</span>
                     <h2 class="guide-title-box">High Culture & Street Soul</h2>
@@ -82,7 +83,7 @@
             </a>
 
             <a href="guide-nyc-architecture.html" class="guide-item">
-                <div class="guide-thumb">🏙️</div>
+                <div class="guide-thumb" style="background-image: url('assets/architecture.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">Architecture</span>
                     <h2 class="guide-title-box">Concrete Jungle Dreams</h2>
@@ -91,7 +92,7 @@
             </a>
 
             <a href="guide-nyc-entertainment.html" class="guide-item">
-                <div class="guide-thumb">🕵️</div>
+                <div class="guide-thumb" style="background-image: url('assets/hidden-gems.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">Hidden Gems</span>
                     <h2 class="guide-title-box">Beyond the Tourist Track</h2>
@@ -100,7 +101,7 @@
             </a>
 
             <a href="guide-nyc-travel.html" class="guide-item">
-                <div class="guide-thumb">💳</div>
+                <div class="guide-thumb" style="background-image: url('assets/points.png');"></div>
                 <div class="guide-meta-box">
                     <span class="guide-tag">Points & Rewards</span>
                     <h2 class="guide-title-box">Travel Hacking NYC</h2>
