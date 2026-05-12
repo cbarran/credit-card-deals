@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Priority: Fetch data first
     const container = document.getElementById('deals-container');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+
     const searchInput = document.getElementById('search-input');
     const compareBar = document.getElementById('compare-bar');
     const compareCount = document.getElementById('compare-count');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allDeals = [];
     let comparisonTray = [];
-    let activeFilter = 'all';
+
 
     // Fetch deals immediately
     fetchDeals();
@@ -197,21 +197,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyFilters() {
         const query = searchInput.value.toLowerCase();
-        const filteredDeals = allDeals.filter(deal => {
-            const matchesCategory = activeFilter === 'all' ? true : (activeFilter === 'no-fee' ? (deal.annual_fee === '$0' || (deal.annual_fee && deal.annual_fee.toLowerCase().includes('none'))) : deal.category === activeFilter);
-            const matchesSearch = (deal.name && deal.name.toLowerCase().includes(query)) || (deal.signup_bonus && deal.signup_bonus.toLowerCase().includes(query));
-            return matchesCategory && matchesSearch;
+        const category = document.getElementById('category-filter')?.value || 'all';
+        const issuer = document.getElementById('issuer-filter')?.value || 'all';
+        const sortBy = document.getElementById('sort-by')?.value || 'featured';
+
+        let filteredDeals = allDeals.filter(deal => {
+            const matchesCategory = category === 'all' ? true : (category === 'no-fee' ? (deal.annual_fee === '$0' || (deal.annual_fee && deal.annual_fee.toLowerCase().includes('none'))) : (deal.category || '').toLowerCase() === category);
+            const matchesIssuer = issuer === 'all' ? true : (deal.issuer || '').toLowerCase().includes(issuer);
+            const matchesSearch = (deal.name && deal.name.toLowerCase().includes(query)) || (deal.signup_bonus && deal.signup_bonus.toLowerCase().includes(query)) || (deal.issuer && deal.issuer.toLowerCase().includes(query));
+            return matchesCategory && matchesIssuer && matchesSearch;
         });
+
+        // Apply Sorting
+        if (sortBy === 'bonus-high') {
+            filteredDeals.sort((a, b) => {
+                const valA = parseInt(a.signup_bonus?.replace(/[^0-9]/g, '') || 0);
+                const valB = parseInt(b.signup_bonus?.replace(/[^0-9]/g, '') || 0);
+                return valB - valA;
+            });
+        } else if (sortBy === 'fee-low') {
+            filteredDeals.sort((a, b) => {
+                const valA = parseInt(a.annual_fee?.replace(/[^0-9]/g, '') || 0);
+                const valB = parseInt(b.annual_fee?.replace(/[^0-9]/g, '') || 0);
+                return valA - valB;
+            });
+        } else if (sortBy === 'rate-high') {
+            filteredDeals.sort((a, b) => {
+                const valA = parseFloat(a.rewards_rate_dining) || 1;
+                const valB = parseFloat(b.rewards_rate_dining) || 1;
+                return valB - valA;
+            });
+        }
+
         renderDeals(filteredDeals);
     }
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeFilter = btn.getAttribute('data-filter');
-            applyFilters();
-        });
+    // New Listeners for Smart Discovery Bar
+    ['category-filter', 'issuer-filter', 'sort-by'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', applyFilters);
     });
 
     searchInput.addEventListener('input', applyFilters);
@@ -329,14 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateComparisonBar() {
         const bar = document.getElementById('comparison-bar');
-        const tray = document.getElementById('comp-tray');
-        if (!bar || !tray) return;
+        const countDisplay = document.getElementById('comp-count-number');
+        if (!bar || !countDisplay) return;
+        
+        countDisplay.textContent = comparisonTray.length;
         
         if (comparisonTray.length > 0) {
             bar.classList.add('active');
-            tray.innerHTML = comparisonTray.map(name => `
-                <div class="tray-item">${name}</div>
-            `).join('');
         } else {
             bar.classList.remove('active');
         }
@@ -359,27 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </tr>
             <tr>
                 <td>Signup Bonus</td>
-                ${selectedDeals.map(d => {
-                    const val = parseInt(d.signup_bonus?.replace(/[^0-9]/g, '') || 0);
-                    const isWinner = selectedDeals.every(other => val >= parseInt(other.signup_bonus?.replace(/[^0-9]/g, '') || 0));
-                    return `<td class="${isWinner ? 'winner-cell' : ''}">${d.signup_bonus || 'N/A'}</td>`;
-                }).join('')}
+                ${selectedDeals.map(d => `<td class="winner-cell">${d.signup_bonus || 'N/A'}</td>`).join('')}
             </tr>
             <tr>
                 <td>Annual Fee</td>
-                ${selectedDeals.map(d => {
-                    const feeVal = parseInt(d.annual_fee?.replace(/[^0-9]/g, '') || 0);
-                    const isWinner = selectedDeals.every(other => feeVal <= parseInt(other.annual_fee?.replace(/[^0-9]/g, '') || 9999));
-                    return `<td class="${isWinner ? 'winner-cell' : ''}">${d.annual_fee || 'N/A'}</td>`;
-                }).join('')}
-            </tr>
-            <tr>
-                <td>Expert Take</td>
-                ${selectedDeals.map(d => `<td class="verdict-cell"><em>${d.best_for ? `Masterclass for ${d.best_for.toLowerCase()}` : 'Dependable daily driver'}</em></td>`).join('')}
+                ${selectedDeals.map(d => `<td>${d.annual_fee || 'N/A'}</td>`).join('')}
             </tr>
             <tr>
                 <td>Action</td>
-                ${selectedDeals.map(d => `<td><a href="${d.link}" class="button-primary" style="font-size: 0.75rem; padding: 10px;" target="_blank">View Offer</a></td>`).join('')}
+                ${selectedDeals.map(d => `<td><a href="${d.application_link || d.link || '#'}" class="button-primary" style="font-size: 0.75rem; padding: 10px;" target="_blank">View Offer</a></td>`).join('')}
             </tr>
         </table>`;
         
@@ -387,20 +398,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('compare-btn')) {
-            const name = e.target.getAttribute('data-name');
+        const btn = e.target.closest('.compare-btn');
+        if (btn) {
+            const name = btn.getAttribute('data-name');
             if (comparisonTray.includes(name)) {
                 comparisonTray = comparisonTray.filter(n => n !== name);
-                e.target.classList.remove('active');
-                e.target.textContent = 'Compare';
+                btn.classList.remove('active');
+                btn.textContent = 'Compare';
             } else {
                 if (comparisonTray.length >= 3) {
                     alert("Max 3 cards for a fair fight!");
                     return;
                 }
                 comparisonTray.push(name);
-                e.target.classList.add('active');
-                e.target.textContent = 'Selected';
+                btn.classList.add('active');
+                btn.textContent = 'Selected';
             }
             updateComparisonBar();
         }
@@ -437,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearCompareBtn.addEventListener('click', () => {
             comparisonTray = [];
             updateComparisonBar();
-            renderDeals(allDeals);
+            applyFilters();
         });
     }
 

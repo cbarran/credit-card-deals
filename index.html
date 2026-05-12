@@ -103,15 +103,44 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Browse the cards</h2>
-                    <div class="search-filter-group">
-                        <div class="search-box">
-                            <input type="text" id="search-input" placeholder="Search cards (e.g. Chase)...">
+                    <!-- Smart Discovery Bar -->
+                    <div class="discovery-bar">
+                        <div class="search-group">
+                            <input type="text" id="search-input" placeholder="Search cards, banks, or bonuses...">
                         </div>
-                        <div class="filters">
-                            <button class="filter-btn active" data-filter="all">All</button>
-                            <button class="filter-btn" data-filter="travel">Travel</button>
-                            <button class="filter-btn" data-filter="cashback">Cashback</button>
-                            <button class="filter-btn" data-filter="no-fee">No Annual Fee</button>
+                        
+                        <div class="filter-controls">
+                            <div class="control-item">
+                                <label>Category</label>
+                                <select id="category-filter">
+                                    <option value="all">All Categories</option>
+                                    <option value="travel">Travel Rewards</option>
+                                    <option value="cashback">Cashback Rewards</option>
+                                    <option value="no-fee">No Annual Fee</option>
+                                </select>
+                            </div>
+
+                            <div class="control-item">
+                                <label>Issuer</label>
+                                <select id="issuer-filter">
+                                    <option value="all">All Banks</option>
+                                    <option value="chase">Chase</option>
+                                    <option value="american express">American Express</option>
+                                    <option value="capital one">Capital One</option>
+                                    <option value="citi">Citi</option>
+                                    <option value="wells fargo">Wells Fargo</option>
+                                </select>
+                            </div>
+
+                            <div class="control-item">
+                                <label>Sort By</label>
+                                <select id="sort-by">
+                                    <option value="featured">Featured</option>
+                                    <option value="bonus-high">Highest Bonus</option>
+                                    <option value="fee-low">Lowest Fee</option>
+                                    <option value="rate-high">Best Reward Rate</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,15 +186,15 @@
             </div>
         </div>
     </footer>
-    <!-- Comparison Bar -->
-    <div id="comparison-bar" class="comparison-bar">
-        <div class="container">
-            <div class="comp-tray" id="comp-tray">
-                <!-- Selected cards will appear here -->
+    <!-- Simple Comparison Bar -->
+    <div id="comparison-bar" class="comparison-bar simple-bar">
+        <div class="container bar-flex">
+            <div class="comp-count-text">
+                <span id="comp-count-number">0</span> Cards Selected
             </div>
             <div class="comp-actions">
                 <button id="compare-now-btn" class="button-primary">Compare Now</button>
-                <button id="clear-comp-btn" class="button-secondary">Clear</button>
+                <button id="clear-comp-btn" class="button-secondary">Reset</button>
             </div>
         </div>
     </div>

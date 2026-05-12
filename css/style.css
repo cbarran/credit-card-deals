@@ -1129,3 +1129,154 @@ input:checked + .slider:before {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
+
+/* Smart Discovery Bar */
+.discovery-bar {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.search-group {
+    margin-bottom: 25px;
+}
+
+.search-group input {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-group input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+}
+
+.filter-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-item label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.control-item select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='Wait, I'll use a simpler one' /%3E%3C/svg%3E");
+}
+
+.control-item select:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.control-item select:focus {
+    border-color: #38bdf8;
+}
+
+/* Simple Comparison Bar */
+.comparison-bar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px 32px;
+    border-radius: 100px;
+    z-index: 9999;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    width: auto;
+    min-width: 320px;
+}
+
+.comparison-bar.active {
+    transform: translateX(-50%) translateY(0);
+}
+
+.bar-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+
+.comp-count-text {
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+}
+
+#comp-count-number {
+    color: #38bdf8;
+}
+
+.comp-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Comparison Table Styling */
+.comp-matrix {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.comp-matrix th, .comp-matrix td {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+}
+
+.comp-card-name {
+    color: #38bdf8;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+}
+
+.winner-cell {
+    background: rgba(56, 189, 248, 0.05);
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.verdict-cell {
+    color: #94a3b8;
+    font-style: italic;
+}
