@@ -73,51 +73,151 @@ h1, h2, h3, .logo {
     display: none; /* Hidden on mobile */
 }
 
-/* Hero Section - Mobile First */
+/* Mood Skins */
+:root {
+    --mood-bg: var(--bg-primary);
+    --mood-accent: var(--accent-primary);
+    --mood-glow: rgba(56, 189, 248, 0.1);
+}
+
+body {
+    background-color: var(--mood-bg);
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .hero {
-    padding: 60px 0 40px;
-    text-align: center;
+    padding: 100px 0 80px;
+    text-align: left;
     position: relative;
     overflow: hidden;
 }
 
-.hero-liquid-bg {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0) 50%),
-                radial-gradient(circle at 30% 30%, rgba(129, 140, 248, 0.1) 0%, rgba(15, 23, 42, 0) 40%);
-    animation: liquidRotate 20s linear infinite;
-    z-index: -1;
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
 }
 
-@keyframes liquidRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-3d-container {
+    flex: 0.8;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card-3d {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.hero-card-3d::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.15) 0%, transparent 60%);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.card-chip {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    border-radius: 6px;
+    position: relative;
+}
+
+.card-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-number {
+    font-family: 'Inter', monospace;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
 }
 
 .hero h1 {
-    font-size: 2.25rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
     position: relative;
-}
-
-.gradient-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     position: relative;
+    max-width: 600px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-3d-container {
+        width: 100%;
+    }
+
+    .hero-card-3d {
+        width: 280px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calc-inputs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .calc-field input {
+        width: 100%;
+    }
+
+    .rewards-calculator {
+        top: 60px;
+    }
 }
 
 /* Rewards Calculator */

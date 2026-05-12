@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const benefits = deal.key_benefits || [];
             const creditScore = deal.credit_score_required || 'Good to Excellent';
             const bonusValue = deal.bonus_value_estimate ? `$${deal.bonus_value_estimate}` : null;
+            const issuer = (deal.issuer || 'generic').toLowerCase();
+
+            card.setAttribute('data-issuer', issuer);
 
             // Magic Rewards Calculation
             const dSpend = parseFloat(diningInput.value) || 0;
@@ -162,6 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     flipContainer.classList.toggle('active');
                 }
             });
+
+            // Mood Skin Trigger
+            card.addEventListener('mouseenter', () => {
+                applyMoodSkin(issuer);
+            });
+            card.addEventListener('mouseleave', () => {
+                resetMoodSkin();
+            });
+
+            // Touch support for Mood Skins
+            card.addEventListener('touchstart', () => {
+                applyMoodSkin(issuer);
+            }, {passive: true});
         });
 
         // Add event listeners to compare buttons
@@ -315,6 +331,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Notifications disabled');
             }
         });
+    }
+
+    // 3D Parallax Hero
+    const parallaxCard = document.getElementById('parallax-card');
+    if (parallaxCard) {
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 25;
+            const y = (window.innerHeight / 2 - e.pageY) / 25;
+            parallaxCard.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            
+            // Shimmer effect
+            const px = (e.pageX / window.innerWidth) * 100;
+            const py = (e.pageY / window.innerHeight) * 100;
+            parallaxCard.style.setProperty('--mouse-x', `${px}%`);
+            parallaxCard.style.setProperty('--mouse-y', `${py}%`);
+        });
+    }
+
+    // Mood Skin Logic
+    const issuerColors = {
+        'american express': { bg: '#0b1d3d', accent: '#fbbf24' },
+        'chase': { bg: '#0a2351', accent: '#38bdf8' },
+        'capital one': { bg: '#002a5c', accent: '#00c1d4' },
+        'citi': { bg: '#1c2c44', accent: '#d9261c' },
+        'wells fargo': { bg: '#2b1a1a', accent: '#d71e28' },
+        'generic': { bg: '#0f172a', accent: '#38bdf8' }
+    };
+
+    function applyMoodSkin(issuer) {
+        const config = issuerColors[issuer] || issuerColors['generic'];
+        document.documentElement.style.setProperty('--mood-bg', config.bg);
+        document.documentElement.style.setProperty('--mood-accent', config.accent);
+    }
+
+    function resetMoodSkin() {
+        document.documentElement.style.setProperty('--mood-bg', '#0f172a');
+        document.documentElement.style.setProperty('--mood-accent', '#38bdf8');
     }
 
     fetchDeals();
