@@ -89,14 +89,17 @@ def scrape_travel_deals():
                 
                 deal = {
                     "name": name,
-                    "bonus": bonus,
-                    "spend": spend,
-                    "fee": fee,
-                    "link": link,
+                    "signup_bonus": bonus,
+                    "min_spend_requirement": spend,
+                    "annual_fee": fee,
+                    "application_link": link,
                     "category": category,
-                    "credit_score": "700-850",
-                    "image": image,
-                    "top_perk": details_text[:100] + "..." if details_text else "Check site for perks"
+                    "credit_score_required": "700-850",
+                    "image_url": image,
+                    "art_image_url": image, # Default to same for scraped
+                    "top_perk": details_text[:100] + "..." if details_text else "Check site for perks",
+                    "is_active": True,
+                    "is_featured": False
                 }
                 deals.append(deal)
         

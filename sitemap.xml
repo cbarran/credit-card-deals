@@ -7,6 +7,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://travelcard.info/card/american-express-gold-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-venture-x-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://travelcard.info/card/chase-sapphire-preferred</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -17,12 +27,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-venture-x-rewards</loc>
+    <loc>https://travelcard.info/card/citi-double-cash-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-venture-rewards</loc>
+    <loc>https://travelcard.info/card/wells-fargo-active-cash-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -32,17 +42,112 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-gold-card</loc>
+    <loc>https://travelcard.info/card/navy-federal-platinum-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-strata-premier</loc>
+    <loc>https://travelcard.info/card/capital-one-platinum-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-autograph-journey</loc>
+    <loc>https://travelcard.info/card/penfed-platinum-rewards-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-visa-platinum-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/alliant-visa-platinum-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/barclays-luxury-card-mastercard-black-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/american-express-everyday-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/the-business-platinum-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/the-platinum-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/royal-caribbean-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/aarp-travel-rewards-mastercard-from-barclays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/barclays-luxury-card-mastercard-gold-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-bj-s-one-plus-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-cabela-s-club-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-venture-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-ventureone-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/disney-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-rewards-plus-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/amtrak-guest-rewards-preferred-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/td-clear-visa-platinum-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/truist-enjoy-travel-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/harris-teeter-rewards-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,27 +157,722 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/ink-business-preferred</loc>
+    <loc>https://travelcard.info/card/bankamericard-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/ink-business-unlimited</loc>
+    <loc>https://travelcard.info/card/celebrity-cruises-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/ink-business-cash</loc>
+    <loc>https://travelcard.info/card/barclays-view-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/freedom-unlimited</loc>
+    <loc>https://travelcard.info/card/priceline-vip-rewards-visa-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/freedom-flex</loc>
+    <loc>https://travelcard.info/card/capital-one-kohl-s-rewards-visa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/disney-premier-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/navy-federal-go-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/pnc-core-visa-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/penfed-gold-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/truist-enjoy-beyond-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/fred-meyer-rewards-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-altitude-reserve-visa-infinite-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-one-key-plus-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/alliant-visa-signature-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/amazon-business-prime-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/american-express-everyday-preferred-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/american-express-plum-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/delta-skymiles-platinum-business-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/marriott-bonvoy-business-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-business-advantage-customized-cash-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-platinum-plus-mastercard-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-premium-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/aadvantage-aviator-world-elite-business-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-bass-pro-shops-club-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-spark-cash-select-for-business</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-venture-x-business</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/amazon-visa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/chase-slate-edge</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/doordash-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ink-business-unlimited-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/prime-visa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/united-club-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/world-of-hyatt-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/at-t-points-plus-card-from-citi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-strata-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-strata-elite-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citibusiness-aadvantage-platinum-select-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/discover-it-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/amtrak-guest-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/fnbo-complete-rewards-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/fnbo-getaway-rewards-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/universal-rewards-plus-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/navy-federal-business-go-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/navy-federal-business-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/navy-federal-visa-signature-flagship-rewards-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/pnc-cash-rewards-visa-signature-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/penfed-pathfinder-rewards-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/truist-business-cash-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/truist-business-travel-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/truist-future-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/kroger-rewards-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/latam-airlines-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-altitude-go-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-business-altitude-connect-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-hotels-com-rewards-visa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-reflect-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/amazon-business-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/blue-business-plus-credit-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-premium-rewards-elite-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/norwegian-cruise-line-world-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/banana-republic-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/barnes-and-noble-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/old-navy-navyist-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-savor-cash-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-spark-miles-select-for-business</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-walmart-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/aeroplan-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ink-business-cash-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/instacart-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/southwest-rapid-rewards-premier-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-custom-cash-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-diamond-preferred-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-strata-premier-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/td-double-up-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/edward-jones-business-plus-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ralphs-rewards-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-altitude-connect-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-autograph-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-signify-business-cash-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/american-express-green-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/blue-business-cash-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/blue-cash-preferred-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/business-green-rewards-card-from-american-express</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/alaska-airlines-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-travel-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/aarp-essential-rewards-mastercard-from-barclays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/gap-good-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-bj-s-one-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-rei-co-op-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-spark-cash-plus</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/chase-freedom-unlimited</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ihg-one-rewards-premier-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/sapphire-reserve-for-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-simplicity-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/costco-anywhere-visa-card-by-citi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/shop-your-way-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/discover-it-cash-back</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bpme-rewards-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/fnbo-evergreen-rewards-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/fordpass-rewards-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/universal-rewards-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/navy-federal-more-rewards-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/pnc-points-visa-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/penfed-promise-visa-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/td-first-class-visa-signature-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/latam-airlines-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/skypass-select-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/skypass-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-business-triple-cash-rewards-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-cash-plus-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-cash-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-smartly-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-attune-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-business-platinum-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-one-key-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/american-express-business-gold-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-business-advantage-travel-rewards-world-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-business-advantage-unlimited-cash-rewards-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-customized-cash-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wyndham-rewards-earner-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/chase-freedom-flex</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ink-business-preferred-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/ink-business-premier-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/united-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/discover-it-miles</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/td-business-solutions-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/td-cash-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-business-leverage-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/wells-fargo-business-elite-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/delta-skymiles-gold-business-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/delta-skymiles-reserve-business-american-express-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/hilton-honors-american-express-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/alaska-airlines-visa-signature-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/bank-of-america-unlimited-cash-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/free-spirit-travel-more-world-elite-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/hawaiian-airlines-world-elite-business-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/jetblue-business-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/jetblue-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-quicksilver-cash-rewards-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-spark-2-cash-plus</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/capital-one-spark-miles-for-business</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/aer-lingus-visa-signature-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/southwest-rapid-rewards-performance-business-credit-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/southwest-rapid-rewards-premier-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -87,422 +887,437 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/southwest-rapid-rewards-priority</loc>
+    <loc>https://travelcard.info/card/citi-aadvantage-executive-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/southwest-rapid-rewards-premier</loc>
+    <loc>https://travelcard.info/card/costco-anywhere-visa-business-card-by-citi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/marriott-bonvoy-boundless</loc>
+    <loc>https://travelcard.info/card/discover-it-chrome</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/world-of-hyatt-card</loc>
+    <loc>https://travelcard.info/card/nhl-discover-it-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/ihg-one-rewards-premier</loc>
+    <loc>https://travelcard.info/card/best-western-rewards-premium-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/aeroplan-credit-card</loc>
+    <loc>https://travelcard.info/card/pnc-visa-business-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/british-airways-visa-signature</loc>
+    <loc>https://travelcard.info/card/penfed-pcr-business-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/aer-lingus-visa-signature</loc>
+    <loc>https://travelcard.info/card/u-s-bank-business-platinum-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/ihg-one-rewards-traveler</loc>
+    <loc>https://travelcard.info/card/wells-fargo-autograph-journey-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/hilton-honors-aspire</loc>
+    <loc>https://travelcard.info/card/blue-cash-everyday-card-from-american-express</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/hilton-honors-surpass</loc>
+    <loc>https://travelcard.info/card/delta-skymiles-blue-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/delta-skymiles-gold</loc>
+    <loc>https://travelcard.info/card/delta-skymiles-platinum-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/delta-skymiles-platinum</loc>
+    <loc>https://travelcard.info/card/frontier-airlines-world-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/delta-skymiles-reserve</loc>
+    <loc>https://travelcard.info/card/jetblue-plus-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/blue-cash-preferred</loc>
+    <loc>https://travelcard.info/card/aaa-daily-advantage-visa-signature-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/blue-cash-everyday</loc>
+    <loc>https://travelcard.info/card/capital-one-quicksilverone-cash-rewards-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/blue-business-plus</loc>
+    <loc>https://travelcard.info/card/chase-freedom-rise</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/green-card</loc>
+    <loc>https://travelcard.info/card/ihg-one-rewards-premier-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/everyday-preferred</loc>
+    <loc>https://travelcard.info/card/marriott-bonvoy-bountiful-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/cash-magnet</loc>
+    <loc>https://travelcard.info/card/southwest-rapid-rewards-plus-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-savor</loc>
+    <loc>https://travelcard.info/card/southwest-rapid-rewards-priority-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-quicksilver</loc>
+    <loc>https://travelcard.info/card/discover-it-balance-transfer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-ventureone</loc>
+    <loc>https://travelcard.info/card/navy-federal-cashrewards-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-spark-miles</loc>
+    <loc>https://travelcard.info/card/pnc-cash-rewards-visa-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-spark-cash-plus</loc>
+    <loc>https://travelcard.info/card/truist-enjoy-cash-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-double-cash</loc>
+    <loc>https://travelcard.info/card/u-s-bank-shopper-cash-rewards-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-custom-cash</loc>
+    <loc>https://travelcard.info/card/alliant-cashback-visa-signature-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards</loc>
+    <loc>https://travelcard.info/card/delta-skymiles-reserve-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-aadvantage-platinum-select</loc>
+    <loc>https://travelcard.info/card/hilton-honors-american-express-aspire-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-costco-anywhere-visa</loc>
+    <loc>https://travelcard.info/card/hilton-honors-american-express-surpass-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-active-cash</loc>
+    <loc>https://travelcard.info/card/air-france-klm-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-autograph</loc>
+    <loc>https://travelcard.info/card/aadvantage-aviator-red-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-reflect</loc>
+    <loc>https://travelcard.info/card/emirates-skywards-rewards-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/discover-it-cash-back</loc>
+    <loc>https://travelcard.info/card/hawaiian-airlines-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/discover-it-miles</loc>
+    <loc>https://travelcard.info/card/wyndham-rewards-earner-plus-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-premium-rewards</loc>
+    <loc>https://travelcard.info/card/british-airways-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-travel-rewards</loc>
+    <loc>https://travelcard.info/card/ihg-one-rewards-traveler-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-customized-cash-rewards</loc>
+    <loc>https://travelcard.info/card/marriott-bonvoy-bold-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-altitude-reserve</loc>
+    <loc>https://travelcard.info/card/marriott-bonvoy-boundless-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-altitude-connect</loc>
+    <loc>https://travelcard.info/card/penfed-power-cash-rewards-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-altitude-go</loc>
+    <loc>https://travelcard.info/card/delta-skymiles-gold-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/fidelity-rewards-visa</loc>
+    <loc>https://travelcard.info/card/hilton-honors-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/penfed-pathfinder-rewards</loc>
+    <loc>https://travelcard.info/card/free-spirit-travel-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/alaska-airlines-visa-signature</loc>
+    <loc>https://travelcard.info/card/world-of-hyatt-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-rewards-card-1</loc>
+    <loc>https://travelcard.info/card/marriott-bonvoy-bevy-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-rewards-card-2</loc>
+    <loc>https://travelcard.info/card/choice-privileges-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards-card-3</loc>
+    <loc>https://travelcard.info/card/emirates-skywards-premium-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-rewards-card-4</loc>
+    <loc>https://travelcard.info/card/wyndham-rewards-earner-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-rewards-card-5</loc>
+    <loc>https://travelcard.info/card/bread-cashback-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-rewards-card-6</loc>
+    <loc>https://travelcard.info/card/iberia-visa-signature-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/barclays-rewards-card-7</loc>
+    <loc>https://travelcard.info/card/united-club-infinite-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/chase-rewards-card-8</loc>
+    <loc>https://travelcard.info/card/united-gateway-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-rewards-card-9</loc>
+    <loc>https://travelcard.info/card/american-airlines-aadvantage-mileup-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-rewards-card-10</loc>
+    <loc>https://travelcard.info/card/citi-aadvantage-platinum-select-world-elite-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards-card-11</loc>
+    <loc>https://travelcard.info/card/best-western-rewards-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-rewards-card-12</loc>
+    <loc>https://travelcard.info/card/choice-privileges-select-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-rewards-card-13</loc>
+    <loc>https://travelcard.info/card/wells-fargo-choice-privileges-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-rewards-card-14</loc>
+    <loc>https://travelcard.info/card/wells-fargo-choice-privileges-select-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/barclays-rewards-card-15</loc>
+    <loc>https://travelcard.info/card/marriott-bonvoy-brilliant-american-express-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/chase-rewards-card-16</loc>
+    <loc>https://travelcard.info/card/sam-s-club-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-rewards-card-17</loc>
+    <loc>https://travelcard.info/card/capital-one-savor-student-cash-rewards-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-rewards-card-18</loc>
+    <loc>https://travelcard.info/card/discover-it-student-chrome</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards-card-19</loc>
+    <loc>https://travelcard.info/card/amazon-prime-store-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-rewards-card-20</loc>
+    <loc>https://travelcard.info/card/bank-of-america-travel-rewards-for-students</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-rewards-card-21</loc>
+    <loc>https://travelcard.info/card/discover-it-student-cash-back</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-rewards-card-22</loc>
+    <loc>https://travelcard.info/card/fifth-third-preferred-cash-back-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/barclays-rewards-card-23</loc>
+    <loc>https://travelcard.info/card/bank-of-america-customized-cash-rewards-for-students</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/chase-rewards-card-24</loc>
+    <loc>https://travelcard.info/card/capital-one-quicksilver-student-cash-rewards-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-rewards-card-25</loc>
+    <loc>https://travelcard.info/card/bank-of-america-customized-cash-rewards-secured-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-rewards-card-26</loc>
+    <loc>https://travelcard.info/card/aarp-travel-rewards-mastercard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards-card-27</loc>
+    <loc>https://travelcard.info/card/navy-federal-nrewards-secured-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-rewards-card-28</loc>
+    <loc>https://travelcard.info/card/pnc-secured-visa-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-rewards-card-29</loc>
+    <loc>https://travelcard.info/card/td-cash-secured-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-rewards-card-30</loc>
+    <loc>https://travelcard.info/card/capital-one-platinum-secured-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/barclays-rewards-card-31</loc>
+    <loc>https://travelcard.info/card/fnbo-secured-visa-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/chase-rewards-card-32</loc>
+    <loc>https://travelcard.info/card/huntington-cashback-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/american-express-rewards-card-33</loc>
+    <loc>https://travelcard.info/card/mandt-visa-signature-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/capital-one-rewards-card-34</loc>
+    <loc>https://travelcard.info/card/u-s-bank-secured-visa-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/citi-rewards-card-35</loc>
+    <loc>https://travelcard.info/card/capital-one-quicksilver-secured-cash-rewards-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/wells-fargo-rewards-card-36</loc>
+    <loc>https://travelcard.info/card/discover-it-secured-credit-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/bank-of-america-rewards-card-37</loc>
+    <loc>https://travelcard.info/card/lowe-s-advantage-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/us-bank-rewards-card-38</loc>
+    <loc>https://travelcard.info/card/harley-davidson-visa-secured-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/barclays-rewards-card-39</loc>
+    <loc>https://travelcard.info/card/u-s-bank-cash-plus-secured-visa-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://travelcard.info/card/chase-rewards-card-40</loc>
+    <loc>https://travelcard.info/card/carnival-world-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/citi-secured-mastercard</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/skypass-visa-secured-card</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://travelcard.info/card/u-s-bank-altitude-go-secured-visa-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

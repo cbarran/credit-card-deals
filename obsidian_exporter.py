@@ -7,16 +7,17 @@ def export_to_obsidian(json_path='C:/Users/User 1/.openclaw/workspace/credit-car
         return
 
     with open(json_path, 'r') as f:
-        deals = json.load(f)
+        data = json.load(f)
+        deals = data.get('deals', data)
 
     with open(output_path, 'w') as f:
         f.write("# Credit Card Deals\n\n")
-        f.write("Last updated: (Generated today)\n\n")
+        f.write(f"Last updated: {data.get('last_updated', '(Generated today)')}\n\n")
         
         for deal in deals:
-            f.write(f"## {deal['Card Name']}\n")
-            f.write(f"- **Issuer:** {deal['Issuer']}\n")
-            f.write(f"- [Apply Here]({deal['Official URL']})\n\n")
+            f.write(f"## {deal.get('name', 'Unknown Card')}\n")
+            f.write(f"- **Issuer:** {deal.get('issuer', 'Unknown')}\n")
+            f.write(f"- [Apply Here]({deal.get('application_link', '#')})\n\n")
             
     print(f"Exported {len(deals)} deals to {output_path}")
 

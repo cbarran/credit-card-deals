@@ -25,7 +25,8 @@ def process_ingestion():
     if 'ranking_score' in df.columns:
         df = df.sort_values(by='ranking_score', ascending=False)
     
-    # Fill missing values
+    # Fill missing values and ensure clean data (nulls instead of NaNs)
+    df = df.replace({pd.NA: None, float('nan'): None})
     df = df.where(pd.notnull(df), None)
     
     # Convert to list of dicts

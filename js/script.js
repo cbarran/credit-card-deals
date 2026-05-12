@@ -59,8 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const artImage = deal.art_image_url || 'assets/chase-sapphire.png';
             const realImage = deal.image_url || deal.card_image_url || 'assets/chase-sapphire.png';
             const link = deal.application_link || deal.link || '#';
+            const bestFor = deal.best_for || null;
+            const rewards = deal.rewards_summary || null;
+            const benefits = deal.key_benefits || [];
+            const creditScore = deal.credit_score_required || 'Good to Excellent';
 
             card.innerHTML = `
+                ${bestFor ? `<div class="best-for-badge">${bestFor}</div>` : ''}
                 <div class="card-flip-container" tabindex="0">
                     <div class="card-inner">
                         <div class="card-front">
@@ -73,6 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="bonus-tag">${bonus}</div>
                 <h3>${deal.name}</h3>
+                
+                ${rewards ? `<p class="rewards-text"><strong>Rewards:</strong> ${rewards}</p>` : ''}
+                
                 <div class="card-details">
                     <div class="detail-item">
                         <span>Min. Spend</span>
@@ -82,7 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>Annual Fee</span>
                         <p>${fee}</p>
                     </div>
+                    <div class="detail-item">
+                        <span>Credit Score</span>
+                        <p>${creditScore}</p>
+                    </div>
                 </div>
+
+                ${benefits.length > 0 ? `
+                <div class="benefits-preview">
+                    <span>Key Benefits</span>
+                    <ul>
+                        ${benefits.slice(0, 3).map(b => `<li>${b}</li>`).join('')}
+                    </ul>
+                </div>` : ''}
+
                 <div class="card-actions">
                     <button class="btn ${isSelected ? 'btn-primary' : 'btn-outline'} compare-btn" data-name="${deal.name}">
                         ${isSelected ? 'Selected' : 'Compare'}
