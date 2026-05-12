@@ -231,18 +231,20 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function updateEstimator() {
+        if (!sliders.dining || !sliders.travel || !sliders.grocery) return;
+
         const dining = parseInt(sliders.dining.value);
         const travel = parseInt(sliders.travel.value);
         const grocery = parseInt(sliders.grocery.value);
 
-        displays.dining.textContent = `$${dining}`;
-        displays.travel.textContent = `$${travel}`;
-        displays.grocery.textContent = `$${grocery}`;
+        if (displays.dining) displays.dining.textContent = `$${dining}`;
+        if (displays.travel) displays.travel.textContent = `$${travel}`;
+        if (displays.grocery) displays.grocery.textContent = `$${grocery}`;
 
         // Simple average calculation for the hero display
         // (Individual card calculations still happen in renderDeals)
         const totalYearly = (dining + travel + grocery) * 12 * 0.02; 
-        displays.total.textContent = `$${Math.round(totalYearly).toLocaleString()}`;
+        if (displays.total) displays.total.textContent = `$${Math.round(totalYearly).toLocaleString()}`;
         
         // Use these values for filtering/card rewards
         window.currentSpending = { dining, travel, grocery };
@@ -263,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.preset-btn').forEach(btn => {
         btn.addEventListener('click', () => {
+            if (!sliders.dining || !sliders.travel || !sliders.grocery) return;
             sliders.dining.value = btn.dataset.dining;
             sliders.travel.value = btn.dataset.travel;
             sliders.grocery.value = btn.dataset.grocery;
@@ -278,14 +281,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const email = document.getElementById('email-input').value;
+            const emailInput = document.getElementById('email-input');
             const msg = document.getElementById('subscription-message');
-            
-            console.log("Subscribing:", email);
-            msg.textContent = "Thanks! You're on the list for exclusive alerts.";
-            msg.style.display = "block";
-            msg.style.color = "#4ade80";
-            newsletterForm.reset();
+            if (emailInput && msg) {
+                console.log("Subscribing:", emailInput.value);
+                msg.textContent = "Thanks! You're on the list for exclusive alerts.";
+                msg.style.display = "block";
+                msg.style.color = "#4ade80";
+                newsletterForm.reset();
+            }
         });
     }
 
@@ -294,25 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alertToggle.addEventListener('change', () => {
             if (alertToggle.checked) {
                 alert('Push notifications enabled! You will be alerted when new top-tier deals are found.');
-            } else {
-                console.log('Notifications disabled');
             }
-        });
-    }
-
-    // 3D Parallax Hero
-    const parallaxCard = document.getElementById('parallax-card');
-    if (parallaxCard) {
-        document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 25;
-            const y = (window.innerHeight / 2 - e.pageY) / 25;
-            parallaxCard.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-            
-            // Shimmer effect
-            const px = (e.pageX / window.innerWidth) * 100;
-            const py = (e.pageY / window.innerHeight) * 100;
-            parallaxCard.style.setProperty('--mouse-x', `${px}%`);
-            parallaxCard.style.setProperty('--mouse-y', `${py}%`);
         });
     }
 
@@ -337,10 +323,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--mood-accent', '#38bdf8');
     }
 
-
     function updateComparisonBar() {
         const bar = document.getElementById('comparison-bar');
         const tray = document.getElementById('comp-tray');
+        if (!bar || !tray) return;
         
         if (comparisonTray.length > 0) {
             bar.classList.add('active');
@@ -354,8 +340,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderComparison() {
         const container = document.getElementById('comparison-table-container');
-        const selectedDeals = allDeals.filter(d => comparisonTray.includes(d.name));
+        if (!container) return;
         
+        const selectedDeals = allDeals.filter(d => comparisonTray.includes(d.name));
         if (selectedDeals.length === 0) {
             container.innerHTML = '<p class="empty-msg">Select at least one card to compare.</p>';
             return;
@@ -415,21 +402,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const compModal = document.getElementById('comparison-modal');
-    document.getElementById('compare-now-btn').addEventListener('click', () => {
-        renderComparison();
-        compModal.style.display = 'block';
-    });
+    // 3D Parallax Hero
+    const parallaxCard = document.getElementById('parallax-card');
+    if (parallaxCard) {
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 25;
+            const y = (window.innerHeight / 2 - e.pageY) / 25;
+            parallaxCard.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+    }
 
-    document.getElementById('clear-comp-btn').addEventListener('click', () => {
-        comparisonTray = [];
-        updateComparisonBar();
-        renderDeals(allDeals); // Reset button states
-    });
+    // Modal Close logic
+    if (compModal) {
+        const modalClose = compModal.querySelector('.close-modal');
+        if (modalClose) {
+            modalClose.addEventListener('click', () => {
+                compModal.style.display = 'none';
+            });
+        }
+    }
 
-    compModal.querySelector('.close-modal').addEventListener('click', () => {
-        compModal.style.display = 'none';
-    });
+    if (compareNowBtn) {
+        compareNowBtn.addEventListener('click', () => {
+            renderComparison();
+            if (compModal) compModal.style.display = 'block';
+        });
+    }
+
+    if (clearCompareBtn) {
+        clearCompareBtn.addEventListener('click', () => {
+            comparisonTray = [];
+            updateComparisonBar();
+            renderDeals(allDeals);
+        });
+    }
 
     fetchDeals();
 });
