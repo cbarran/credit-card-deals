@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Priority: Fetch data first
     const container = document.getElementById('deals-container');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const searchInput = document.getElementById('search-input');
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let allDeals = [];
     let comparisonTray = [];
     let activeFilter = 'all';
+
+    // Fetch deals immediately
+    fetchDeals();
 
     // Calculator inputs
     const diningInput = document.getElementById('calc-dining');
@@ -437,5 +441,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    fetchDeals();
+
 });
