@@ -36,13 +36,18 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
-                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="guides.html" class="active">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -116,5 +121,6 @@
             <p>&copy; 2026 TravelCard.info. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/common.js?v=6.0"></script>
 </body>
 </html>
