@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="card-flip-container" tabindex="0">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="${artImage}" alt="${deal.name} Art" class="card-img-flip" onerror="this.src='${realImage}'">
+                            <img src="${artImage}" alt="${deal.name} Art" class="card-img-flip" onerror="this.src='${realImage}'; this.onerror=()=>this.src='assets/placeholder-card.png'">
                         </div>
                         <div class="card-back">
-                            <img src="${realImage}" alt="${deal.name} Card" class="card-img-flip" onerror="this.src='https://via.placeholder.com/300x180/1e293b/38bdf8?text=Card'">
+                            <img src="${realImage}" alt="${deal.name} Card" class="card-img-flip" onerror="this.src='assets/placeholder-card.png'">
                         </div>
                     </div>
                 </div>

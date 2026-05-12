@@ -56,7 +56,12 @@ def process_ingestion():
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(output, f, indent=2)
     
-    print(f"Successfully processed {len(deals)} deals into {OUTPUT_FILE}.")
+    # Save to js (CORS bypass)
+    JS_FILE = OUTPUT_FILE.replace('.json', '.js')
+    with open(JS_FILE, 'w') as f:
+        f.write(f"window.DEALS_DATA = {json.dumps(output, indent=2)};")
+    
+    print(f"Successfully processed {len(deals)} deals into {OUTPUT_FILE} and {JS_FILE}.")
 
 if __name__ == "__main__":
     process_ingestion()

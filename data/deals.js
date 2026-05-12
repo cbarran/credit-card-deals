@@ -1,4 +1,4 @@
-{
+window.DEALS_DATA = {
   "last_updated": "2026-05-11 22:51:39",
   "deals_count": 263,
   "deals": [
@@ -18529,4 +18529,4 @@
       "card_image_accuracy_status": "generated_card_asset_not_official"
     }
   ]
-}
+};
