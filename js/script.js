@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const rewards = deal.rewards_summary || null;
             const benefits = deal.key_benefits || [];
             const creditScore = deal.credit_score_required || 'Good to Excellent';
+            const bonusValue = deal.bonus_value_estimate ? `$${deal.bonus_value_estimate}` : null;
 
             card.innerHTML = `
                 ${bestFor ? `<div class="best-for-badge">${bestFor}</div>` : ''}
@@ -76,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 </div>
-                <div class="bonus-tag">${bonus}</div>
+                <div class="bonus-row">
+                    <div class="bonus-tag">${bonus}</div>
+                    ${bonusValue ? `<div class="value-badge">Est. Value: ${bonusValue}</div>` : ''}
+                </div>
                 <h3>${deal.name}</h3>
                 
                 ${rewards ? `<p class="rewards-text"><strong>Rewards:</strong> ${rewards}</p>` : ''}
