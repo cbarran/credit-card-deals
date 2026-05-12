@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
             card.setAttribute('data-issuer', issuer);
 
             // Magic Rewards Calculation
-            const dSpend = parseFloat(diningInput.value) || 0;
-            const tSpend = parseFloat(travelInput.value) || 0;
-            const gSpend = parseFloat(groceryInput.value) || 0;
+            const dSpend = window.currentSpending?.dining || 0;
+            const tSpend = window.currentSpending?.travel || 0;
+            const gSpend = window.currentSpending?.grocery || 0;
             
             const dRate = parseFloat(deal.rewards_rate_dining) || 1;
             const tRate = parseFloat(deal.rewards_rate_travel) || 1;
@@ -300,23 +300,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', applyFilters);
 
-    // Calculator event listeners
-    [diningInput, travelInput, groceryInput].forEach(input => {
-        if (input) {
-            input.addEventListener('input', () => {
-                applyFilters();
-            });
-        }
+    // Reward Estimator Drawer Logic
+    const calcDrawer = document.getElementById('calc-drawer');
+    const calcToggle = document.getElementById('calc-toggle');
+    const closeDrawer = document.getElementById('close-drawer');
+    
+    const sliders = {
+        dining: document.getElementById('dining-slider'),
+        travel: document.getElementById('travel-slider'),
+        grocery: document.getElementById('grocery-slider')
+    };
+
+    const displays = {
+        dining: document.getElementById('dining-val'),
+        travel: document.getElementById('travel-val'),
+        grocery: document.getElementById('grocery-val'),
+        total: document.getElementById('total-earnings-display')
+    };
+
+    function updateEstimator() {
+        const dining = parseInt(sliders.dining.value);
+        const travel = parseInt(sliders.travel.value);
+        const grocery = parseInt(sliders.grocery.value);
+
+        displays.dining.textContent = `$${dining}`;
+        displays.travel.textContent = `$${travel}`;
+        displays.grocery.textContent = `$${grocery}`;
+
+        // Simple average calculation for the hero display
+        // (Individual card calculations still happen in renderDeals)
+        const totalYearly = (dining + travel + grocery) * 12 * 0.02; 
+        displays.total.textContent = `$${Math.round(totalYearly).toLocaleString()}`;
+        
+        // Use these values for filtering/card rewards
+        window.currentSpending = { dining, travel, grocery };
+        applyFilters();
+    }
+
+    if (calcToggle) {
+        calcToggle.addEventListener('click', () => calcDrawer.classList.add('active'));
+    }
+
+    if (closeDrawer) {
+        closeDrawer.addEventListener('click', () => calcDrawer.classList.remove('active'));
+    }
+
+    Object.values(sliders).forEach(slider => {
+        if (slider) slider.addEventListener('input', updateEstimator);
     });
 
-    // Toggle Floating Calculator
-    const calcWidget = document.getElementById('calc-widget');
-    const calcToggle = document.getElementById('calc-toggle');
-    if (calcWidget && calcToggle) {
-        calcToggle.addEventListener('click', () => {
-            calcWidget.classList.toggle('active');
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            sliders.dining.value = btn.dataset.dining;
+            sliders.travel.value = btn.dataset.travel;
+            sliders.grocery.value = btn.dataset.grocery;
+            updateEstimator();
         });
-    }
+    });
+
+    // Initialize with default values
+    updateEstimator();
 
     // Newsletter Form Logic (Updated)
     const newsletterForm = document.getElementById('newsletter-form');

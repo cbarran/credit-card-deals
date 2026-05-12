@@ -48,34 +48,57 @@
             </div>
         </section>
 
-        <div class="floating-calc-widget" id="calc-widget">
-            <button class="calc-toggle" id="calc-toggle">
-                <span class="calc-icon">📊</span>
-                <span class="calc-text">How much will I earn?</span>
-            </button>
-            <div class="calc-content">
-                <div class="calc-inner">
-                    <div class="calc-header">
-                        <span><strong>How much you'll earn in a year:</strong></span>
-                    </div>
-                    <div class="calc-inputs">
-                        <div class="calc-field">
-                            <label>Eating out</label>
-                            <input type="number" id="calc-dining" value="500" step="50">
-                        </div>
-                        <div class="calc-field">
-                            <label>Travel</label>
-                            <input type="number" id="calc-travel" value="200" step="50">
-                        </div>
-                        <div class="calc-field">
-                            <label>Groceries</label>
-                            <input type="number" id="calc-grocery" value="400" step="50">
-                        </div>
-                    </div>
-                    <p class="calc-disclaimer">These are estimates based on standard multipliers.</p>
+        <div id="calc-drawer" class="calc-drawer">
+            <div class="drawer-header">
+                <h2>Reward Estimator</h2>
+                <button id="close-drawer" class="close-btn">&times;</button>
+            </div>
+            <div class="drawer-content">
+                <p class="drawer-intro">Adjust your monthly spend to see your potential rewards.</p>
+                
+                <div class="earnings-hero">
+                    <span class="earnings-label">Est. Annual Value</span>
+                    <div id="total-earnings-display" class="earnings-value">$0</div>
                 </div>
+
+                <div class="presets">
+                    <button class="preset-btn" data-dining="200" data-travel="100" data-grocery="300">Basic</button>
+                    <button class="preset-btn" data-dining="600" data-travel="400" data-grocery="500">Pro</button>
+                    <button class="preset-btn" data-dining="1500" data-travel="1000" data-grocery="800">Elite</button>
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Dining</span>
+                        <span id="dining-val">$500</span>
+                    </div>
+                    <input type="range" id="dining-slider" min="0" max="3000" step="50" value="500">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Travel</span>
+                        <span id="travel-val">$200</span>
+                    </div>
+                    <input type="range" id="travel-slider" min="0" max="3000" step="50" value="200">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Groceries</span>
+                        <span id="grocery-val">$400</span>
+                    </div>
+                    <input type="range" id="grocery-slider" min="0" max="3000" step="50" value="400">
+                </div>
+                
+                <p class="drawer-disclaimer">Estimates based on average reward multipliers for selected cards.</p>
             </div>
         </div>
+
+        <button class="calc-toggle" id="calc-toggle" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000;">
+            <span class="calc-icon">📊</span>
+            <span class="calc-text">How much will I earn?</span>
+        </button>
 
         <section id="deals" class="deals-section">
             <div class="container">
