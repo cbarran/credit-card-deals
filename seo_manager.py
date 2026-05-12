@@ -16,6 +16,11 @@ def update_sitemap():
         ('guides.html', 'weekly', '0.9'),
         ('about.html', 'monthly', '0.7'),
         ('guide-nyc-travel.html', 'weekly', '0.9'),
+        ('guide-nyc-arrival.html', 'weekly', '0.9'),
+        ('guide-nyc-food.html', 'weekly', '0.9'),
+        ('guide-nyc-culture.html', 'weekly', '0.9'),
+        ('guide-nyc-architecture.html', 'weekly', '0.9'),
+        ('guide-nyc-entertainment.html', 'weekly', '0.9'),
         ('privacy-policy.html', 'monthly', '0.5')
     ]
     for page, freq, prio in static_pages:
