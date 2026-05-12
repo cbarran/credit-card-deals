@@ -11,6 +11,16 @@ def update_sitemap():
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += '  <url>\n    <loc>https://travelcard.info/</loc>\n    <lastmod>' + datetime.now().strftime('%Y-%m-%d') + '</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n'
     
+    # Static Pages (Publisher Content)
+    static_pages = [
+        ('guides.html', 'weekly', '0.9'),
+        ('about.html', 'monthly', '0.7'),
+        ('guide-nyc-travel.html', 'weekly', '0.9'),
+        ('privacy-policy.html', 'monthly', '0.5')
+    ]
+    for page, freq, prio in static_pages:
+        sitemap += f'  <url>\n    <loc>https://travelcard.info/{page}</loc>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>\n'
+
     for deal in deals:
         # Use existing slug or generate from name
         slug = deal.get('slug')

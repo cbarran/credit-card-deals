@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="magic-earnings-badge">
                     What you'll earn in a year: ${Math.round(annualEarnings).toLocaleString()} ${pointsCurrency}
                 </div>
+                <div class="card-insight">
+                    ${bestFor ? `<strong>Why it's a winner:</strong> This card is an elite choice for ${bestFor.toLowerCase()} enthusiasts, offering some of the best ${pointsCurrency.toLowerCase()} multipliers in the current market.` : `<strong>Pro Insight:</strong> A reliable all-rounder for building your ${pointsCurrency.toLowerCase()} balance with steady, predictable returns.`}
+                </div>
                 <div class="bonus-row">
                     <div class="bonus-tag">${bonus}</div>
                     ${bonusValue ? `<div class="value-badge">Estimated Value: ${bonusValue}</div>` : ''}

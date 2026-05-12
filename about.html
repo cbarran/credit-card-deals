@@ -6,90 +6,135 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>About us | TravelCard.info</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        .about-page {
+        .about-body {
+            background: #020617;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
+            padding: 40px 20px;
+            perspective: 1000px;
         }
-        .about-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            padding: 60px 40px;
-            border-radius: 24px;
-            max-width: 700px;
+        .cool-about-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 80px 60px;
+            max-width: 800px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            position: relative;
         }
-        .mission-tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-primary);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .cool-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+        .cool-mission {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+        .step-item {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .step-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+        .step-label { font-weight: 700; color: white; display: block; margin-bottom: 4px; }
+        .step-desc { font-size: 0.8rem; color: var(--text-secondary); }
+
+        .human-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .btn-cool-back {
+            background: white;
+            color: #020617;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: inline-block;
         }
-        .mission-oneliner {
-            font-size: 1.75rem;
-            font-weight: 800;
-            line-height: 1.3;
-            color: white;
-            margin-bottom: 32px;
-            letter-spacing: -0.5px;
+        .btn-cool-back:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
         }
-        .about-text {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: gap 0.2s;
-        }
-        .back-home:hover {
-            gap: 12px;
+
+        @media (max-width: 768px) {
+            .steps-container { grid-template-columns: 1fr; }
+            .cool-header { font-size: 2.5rem; }
+            .cool-about-card { padding: 40px 24px; }
         }
     </style>
 </head>
-<body>
-    <div class="about-page">
-        <div class="hero-liquid-bg"></div>
-        <div class="container">
-            <main class="about-card">
-                <span class="mission-tag">The Mission</span>
-                <h1 class="mission-oneliner">We organize the details into a simple cheat sheet so you can find your next travel reward in seconds—not hours.</h1>
-                
-                <div class="about-text">
-                    <p>Researching credit cards is time-consuming. Between point valuations, annual fees, and fine-print, finding the right card can feel overwhelming.</p>
-                    <p><strong>TravelCard.info</strong> was built to do the heavy lifting for you. We provide an independent cheat sheet of current issuer data so you can compare rewards purely on the facts.</p>
-                    <p>We are not a bank, and we don't favor one card over another. Our only goal is to give you the clear data you need to save time and travel more.</p>
-                </div>
-
-                <a href="index.html" class="back-home">
-                    <span>← Back to Card Collection</span>
-                </a>
-            </main>
+<body class="about-body">
+    <div class="hero-liquid-bg"></div>
+    
+    <main class="cool-about-card" id="about-card">
+        <h1 class="cool-header">About us</h1>
+        <p class="cool-mission">The simple way to save hours of research and find the best cards for your travel goals.</p>
+        
+        <div class="steps-container">
+            <div class="step-item">
+                <span class="step-icon">🔍</span>
+                <span class="step-label">Find</span>
+                <span class="step-desc">We track thousands of card data points.</span>
+            </div>
+            <div class="step-item">
+                <span class="step-icon">💡</span>
+                <span class="step-label">Simplify</span>
+                <span class="step-desc">We cut through the bank's fine print.</span>
+            </div>
+            <div class="step-item">
+                <span class="step-icon">⚡</span>
+                <span class="step-label">Save Time</span>
+                <span class="step-desc">You find your next reward in seconds.</span>
+            </div>
         </div>
-    </div>
+
+        <div class="human-text">
+            <p>We built this because comparing credit cards shouldn't feel like a part-time job. We are an independent team that puts the facts first—no robotic jargon, no bank bias, just clear data to help you travel for less.</p>
+        </div>
+
+        <a href="index.html" class="btn-cool-back">← Back to the cards</a>
+    </main>
+
+    <script>
+        const card = document.getElementById('about-card');
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 40;
+            const y = (window.innerHeight / 2 - e.pageY) / 40;
+            card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+    </script>
 </body>
 </html>
