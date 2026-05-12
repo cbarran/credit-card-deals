@@ -168,6 +168,53 @@ body {
     align-items: flex-end;
 }
 
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    color: #020617;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+    font-size: 0.95rem;
+}
+
+.button-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+    filter: brightness(1.1);
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
 .calc-toggle {
     background: var(--accent-primary);
     color: var(--bg-primary);
