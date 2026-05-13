@@ -43,7 +43,6 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     position: relative;
-    contain: paint;
 }
 
 body {
@@ -638,6 +637,11 @@ input[type="range"] {
     .calc-drawer {
         width: 100%;
         right: -100%;
+    }
+    .calc-drawer.active {
+        width: 100%;
+        max-width: 100%;
+        right: 0;
     }
     
     .modal-content {
