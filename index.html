@@ -171,6 +171,23 @@
                                 </select>
                             </div>
 
+                            <!-- Airline Dropdown -->
+                            <div class="elite-dropdown" id="airline-dropdown" data-filter="airline">
+                                <label>Airline Partner</label>
+                                <div class="dropdown-trigger">
+                                    <span class="selected-value">All Airlines</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                                <div class="dropdown-menu" id="airline-dropdown-menu">
+                                    <div class="dropdown-item active" data-value="all">All Airlines</div>
+                                    <!-- Dynamic items will be injected here -->
+                                </div>
+                                <select id="airline-filter" style="display: none;">
+                                    <option value="all">All Airlines</option>
+                                    <!-- Dynamic options will be injected here -->
+                                </select>
+                            </div>
+
                             <!-- Sort Dropdown -->
                             <div class="elite-dropdown" id="sort-dropdown" data-filter="sort">
                                 <label>Sort By</label>
@@ -181,12 +198,16 @@
                                 <div class="dropdown-menu">
                                     <div class="dropdown-item active" data-value="featured">Featured First</div>
                                     <div class="dropdown-item" data-value="bonus-high">Highest Bonus</div>
+                                    <div class="dropdown-item" data-value="bonus-value">Estimated Bonus Value</div>
+                                    <div class="dropdown-item" data-value="premium">Premium Ranking</div>
                                     <div class="dropdown-item" data-value="fee-low">Lowest Annual Fee</div>
                                     <div class="dropdown-item" data-value="rate-high">Best Rewards Rate</div>
                                 </div>
                                 <select id="sort-by" style="display: none;">
                                     <option value="featured">Featured First</option>
                                     <option value="bonus-high">Highest Bonus</option>
+                                    <option value="bonus-value">Estimated Bonus Value</option>
+                                    <option value="premium">Premium Ranking</option>
                                     <option value="fee-low">Lowest Annual Fee</option>
                                     <option value="rate-high">Best Rewards Rate</option>
                                 </select>
@@ -226,8 +247,9 @@
             </div>
             <div class="footer-content">
                 <p class="disclaimer">
-                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
-                    Investments and credit decisions carry risks.
+                    <strong>Advertising Disclosure:</strong> TravelCard.info is an independent, advertising-supported comparison service. We may receive compensation from third-party advertisers (such as Google AdSense) or from companies whose products are featured here. This compensation may impact how and where products appear on this site.
+                    <br><br>
+                    <strong>Financial Disclaimer:</strong> All content is for informational and editorial purposes only and does <strong>not constitute financial or legal advice</strong>. We are not a credit card issuer or financial advisor. While we maintain rigorous data standards, card offers change frequently without notice. Always verify the most current terms, fees, and APRs on the issuer’s official application page before applying.
                 </p>
                 <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
                     <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>

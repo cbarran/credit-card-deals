@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Fetch deals immediately
-    fetchDeals();
 
     // Calculator inputs
     const diningInput = document.getElementById('calc-dining');
@@ -89,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const badge = document.getElementById('last-updated-badge');
                 if (badge) badge.textContent = `| Last Scanned: ${window.DEALS_DATA.last_updated}`;
             }
+            populateAirlineFilter(allDeals);
             renderDeals(allDeals);
             return;
         }
@@ -105,11 +105,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (badge) badge.textContent = `| Last Scanned: ${data.last_updated}`;
             }
             
+            populateAirlineFilter(allDeals);
             renderDeals(allDeals);
         } catch (error) {
             console.error('Error:', error);
             container.innerHTML = `<p class="error-message">Oops! We couldn't load the deals. Please refresh or try running through a local server.</p>`;
         }
+    }
+
+    function populateAirlineFilter(deals) {
+        const airlineMenu = document.getElementById('airline-dropdown-menu');
+        const airlineSelect = document.getElementById('airline-filter');
+        if (!airlineMenu || !airlineSelect) return;
+
+        // Dynamically extract all unique airlines from the deals
+        const allAirlinesSet = new Set();
+        deals.forEach(deal => {
+            if (deal.eligible_airlines && Array.isArray(deal.eligible_airlines)) {
+                deal.eligible_airlines.forEach(airline => allAirlinesSet.add(airline));
+            }
+        });
+
+        const sortedAirlines = Array.from(allAirlinesSet).sort();
+
+        // Keep "All Airlines"
+        airlineMenu.innerHTML = '<div class="dropdown-item active" data-value="all">All Airlines</div>';
+        airlineSelect.innerHTML = '<option value="all">All Airlines</option>';
+
+        sortedAirlines.forEach(airline => {
+            // Update hidden select
+            const option = document.createElement('option');
+            option.value = airline;
+            option.textContent = airline;
+            airlineSelect.appendChild(option);
+
+            // Update Elite UI
+            const item = document.createElement('div');
+            item.className = 'dropdown-item';
+            item.setAttribute('data-value', airline);
+            item.textContent = airline;
+            
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const value = item.getAttribute('data-value');
+                const text = item.textContent;
+                
+                airlineSelect.value = value;
+                airlineSelect.dispatchEvent(new Event('change'));
+                
+                const display = document.querySelector('#airline-dropdown .selected-value');
+                if (display) display.textContent = text;
+                
+                airlineMenu.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                document.getElementById('airline-dropdown').classList.remove('active');
+            });
+            
+            airlineMenu.appendChild(item);
+        });
     }
 
     function renderDeals(deals) {
@@ -255,13 +308,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const query = searchInput.value.toLowerCase();
         const category = document.getElementById('category-filter')?.value || 'all';
         const issuer = document.getElementById('issuer-filter')?.value || 'all';
+        const airline = document.getElementById('airline-filter')?.value || 'all';
         const sortBy = document.getElementById('sort-by')?.value || 'featured';
 
         let filteredDeals = allDeals.filter(deal => {
             const matchesCategory = category === 'all' ? true : (category === 'no-fee' ? (deal.annual_fee === '$0' || (deal.annual_fee && deal.annual_fee.toLowerCase().includes('none'))) : (deal.category || '').toLowerCase() === category);
             const matchesIssuer = issuer === 'all' ? true : (deal.issuer || '').toLowerCase().includes(issuer);
+            const matchesAirline = airline === 'all' ? true : (deal.eligible_airlines && deal.eligible_airlines.some(a => a.toLowerCase() === airline.toLowerCase()));
             const matchesSearch = (deal.name && deal.name.toLowerCase().includes(query)) || (deal.signup_bonus && deal.signup_bonus.toLowerCase().includes(query)) || (deal.issuer && deal.issuer.toLowerCase().includes(query));
-            return matchesCategory && matchesIssuer && matchesSearch;
+            return matchesCategory && matchesIssuer && matchesAirline && matchesSearch;
         });
 
         // Apply Sorting
@@ -271,6 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const valB = parseInt(b.signup_bonus?.replace(/[^0-9]/g, '') || 0);
                 return valB - valA;
             });
+        } else if (sortBy === 'bonus-value') {
+            filteredDeals.sort((a, b) => (b.bonus_value_estimate || 0) - (a.bonus_value_estimate || 0));
+        } else if (sortBy === 'premium') {
+            filteredDeals.sort((a, b) => (b.ranking_score || 0) - (a.ranking_score || 0));
         } else if (sortBy === 'fee-low') {
             filteredDeals.sort((a, b) => {
                 const valA = parseInt(a.annual_fee?.replace(/[^0-9]/g, '') || 0);
@@ -289,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // New Listeners for Smart Discovery Bar
-    ['category-filter', 'issuer-filter', 'sort-by'].forEach(id => {
+    ['category-filter', 'issuer-filter', 'airline-filter', 'sort-by'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', applyFilters);
     });
@@ -341,6 +400,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (closeDrawer) {
         closeDrawer.addEventListener('click', () => calcDrawer.classList.remove('active'));
+    }
+
+    // Delegate badge clicks from the deals grid
+    const dealsGrid = document.getElementById('deals-container');
+    if (dealsGrid) {
+        dealsGrid.addEventListener('click', (e) => {
+            if (e.target.closest('.magic-earnings-badge')) {
+                if (calcDrawer) calcDrawer.classList.add('active');
+            }
+        });
     }
 
     Object.values(sliders).forEach(slider => {
@@ -518,6 +587,9 @@ document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         });
     }
+
+    // Start data fetch after all UI components are ready
+    fetchDeals();
 
 
 });
