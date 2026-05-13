@@ -15,18 +15,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Ambition: NYC Architecture Guide | TravelCard.info</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=9.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; }
-        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%); }
+        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(5, 150, 105, 0.15) 0%, transparent 70%); }
         .guide-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .guide-meta { color: #10b981; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
+        .guide-meta { color: #D4A72C; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
         .guide-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
-        .arch-narrative h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; margin: 60px 0 24px; }
-        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; }
-        .map-link:hover { background: rgba(16, 185, 129, 0.2); }
-        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        .guide-content h2 { color: white; margin: 60px 0 24px; font-family: 'Outfit', sans-serif; font-size: 2rem; }
+        .guide-content p { margin-bottom: 32px; font-size: 1.15rem; color: var(--text-secondary); }
+        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(5, 150, 105, 0.1); color: #10b981; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; margin-bottom: 32px; border: 1px solid rgba(5, 150, 105, 0.2); }
+        .map-link:hover { background: rgba(5, 150, 105, 0.2); border-color: rgba(5, 150, 105, 0.4); }
+        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: #D4A72C; text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        
+        @media (max-width: 768px) {
+            .guide-hero { padding: 80px 0 40px; }
+            .guide-title { font-size: 2.2rem; letter-spacing: -1px; }
+            .guide-content h2 { font-size: 1.6rem; margin: 40px 0 16px; }
+            .guide-content p { font-size: 1rem; margin-bottom: 24px; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -34,41 +45,78 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
                     <li><a href="guides.html">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
     <header class="guide-hero">
         <div class="container">
             <span class="guide-meta">Vertical Ambition</span>
             <h1 class="guide-title">Concrete Jungle Dreams</h1>
         </div>
     </header>
+
     <main class="guide-container">
-        <a href="guides.html" class="back-to-guides">← Back to all guides</a>
+        <a href="guides.html" class="back-to-guides"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to all guides</a>
         
-        <div class="arch-narrative">
+        <div class="guide-content">
             <p>To look at the New York City skyline is to witness a century of competition. It’s a physical manifestation of the word "more"—more height, more light, more glass, more ambition. But the most interesting stories are often told at the intersections where the old world meets the new.</p>
 
             <img src="assets/architecture.png" alt="NYC Architecture" style="width: 100%; border-radius: 24px; margin: 40px 0; border: 1px solid rgba(255,255,255,0.1);">
 
             <h2>The High Line: The City’s New Lungs</h2>
-            <p>Walking the High Line is like being in a futuristic linear garden that floats thirty feet above the chaos of the Meatpacking District.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Gansevoort+St+%26+Washington+St+New+York+NY+10014" target="_blank" class="map-link">📍 Teleport to Gansevoort St</a>
+            <p>Walking the High Line is like being in a futuristic linear garden that floats thirty feet above the chaos of the Meatpacking District. It's a miracle of adaptive reuse, turning a derelict industrial railway into a ribbon of green that stitches together the historic West Side.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Gansevoort+St+%26+Washington+St+New+York+NY+10014" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to Gansevoort St</a>
 
             <h2>The Skeletal Splendor: The Oculus</h2>
-            <p>The Oculus, designed by Santiago Calatrava, is a masterclass in skeletal grace at the World Trade Center site.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Church+St+New+York+NY+10006" target="_blank" class="map-link">📍 Teleport to Church St</a>
+            <p>The Oculus, designed by Santiago Calatrava, is a masterclass in skeletal grace at the World Trade Center site. It was built to resemble a bird released from a child's hands, and inside, the pure white ribbing creates a cathedral of light that feels entirely separate from the subway platforms below.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Church+St+New+York+NY+10006" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to Church St</a>
 
             <h2>Celestial Design: Grand Central</h2>
-            <p>Be sure to look up at the celestial ceiling in the main concourse—a 1913 masterpiece of Beaux-Arts design.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=89+E+42nd+St+New+York+NY+10017" target="_blank" class="map-link">📍 Teleport to 89 E 42nd St</a>
+            <p>Be sure to look up at the celestial ceiling in the main concourse—a 1913 masterpiece of Beaux-Arts design. It's a reminder that even in the most functional transit hub, the city finds room for cosmic beauty. Pro tip: The stars are actually painted in reverse, a quirk that has debated architects for decades.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=89+E+42nd+St+New+York+NY+10017" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 89 E 42nd St</a>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <span id="last-updated-badge" style="margin-left: 10px; opacity: 0.6; font-size: 0.75rem;"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

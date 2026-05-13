@@ -15,22 +15,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Culinary Pilgrimage: Essential NYC Bites | TravelCard.info</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=9.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; }
-        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(239, 68, 68, 0.15) 0%, transparent 70%); }
-        .guide-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .guide-meta { color: #ef4444; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
-        .guide-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
-        .food-story { margin-top: 60px; }
-        .food-block { margin-bottom: 80px; }
-        .food-block h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; margin-bottom: 16px; }
-        .food-block p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 24px; }
-        .food-image { width: 100%; border-radius: 24px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1); }
-        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.1); color: var(--accent-primary); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; }
-        .map-link:hover { background: rgba(56, 189, 248, 0.2); }
-        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; font-family: 'Inter', sans-serif; }
+        .guide-hero { padding: 160px 0 100px; text-align: center; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%); position: relative; }
+        .guide-container { max-width: 850px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 2; }
+        
+        .guide-meta { color: #D4A72C; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 20px; display: block; letter-spacing: 3px; font-family: 'Inter', sans-serif; }
+        .guide-title { font-family: 'Outfit', sans-serif; font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 32px; letter-spacing: -2px; color: white; }
+        
+        .food-story { margin-top: 40px; }
+        .food-block { 
+            margin-bottom: 100px; 
+            background: rgba(30, 41, 59, 0.4); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 32px; 
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+        .food-block:hover { transform: translateY(-5px); border-color: rgba(16, 185, 129, 0.3); }
+        
+        .food-block h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.4rem; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.5px; }
+        .food-block p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 28px; font-weight: 400; line-height: 1.7; }
+        .food-image { width: 100%; border-radius: 20px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1); object-fit: cover; aspect-ratio: 16/9; }
+        
+        .map-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            background: rgba(212, 167, 44, 0.1); 
+            color: #D4A72C; 
+            padding: 12px 24px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            border: 1px solid rgba(212, 167, 44, 0.2);
+        }
+        .map-link:hover { background: #D4A72C; color: #020617; transform: scale(1.05); border-color: #D4A72C; }
+        
+        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; font-weight: 600; margin-bottom: 48px; transition: color 0.2s; font-size: 0.95rem; }
+        .back-to-guides:hover { color: #D4A72C; }
+
+        @media (max-width: 768px) {
+            .guide-hero { padding: 120px 0 60px; }
+            .guide-title { font-size: 2.6rem; letter-spacing: -1px; }
+            .food-block { padding: 24px; margin-bottom: 40px; border-radius: 24px; }
+            .food-block h2 { font-size: 1.8rem; }
+            .food-block p { font-size: 1rem; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -38,50 +77,86 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
-                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="guides.html" class="active">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
     <header class="guide-hero">
         <div class="container">
-            <span class="guide-meta">Culinary Pilgrimage</span>
+            <span class="guide-meta" data-lucide="utensils">Culinary Pilgrimage</span>
             <h1 class="guide-title">The Essential Bites of New York</h1>
         </div>
     </header>
+
     <main class="guide-container">
-        <a href="guides.html" class="back-to-guides">← Back to all guides</a>
+        <a href="guides.html" class="back-to-guides"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to the Insider Series</a>
         
         <div class="food-story">
             <div class="food-block">
                 <h2>The Street Slice: Joe’s Pizza</h2>
                 <img src="assets/pizza.png" alt="NYC Pizza Aesthetic" class="food-image">
                 <p>There is a specific sound to a Joe's Pizza crust—a sharp, clean *crack* as you fold the slice in half. Standing at the counter, watching the flour fly in the back, you aren't just eating pizza; you're participating in a 40-year-old tradition.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=7+Carmine+St+New+York+NY+10014" target="_blank" class="map-link">📍 Teleport to 7 Carmine St</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=7+Carmine+St+New+York+NY+10014" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 7 Carmine St</a>
             </div>
 
             <div class="food-block">
                 <h2>The Pastrami Portal: Katz’s Delicatessen</h2>
                 <p>Entering Katz’s is like stepping into a time machine. The air is thick with the scent of brine and slow-cooked brisket. When that hand-sliced pastrami hits the rye, it’s a moment of pure, unadulterated NYC history.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=205+E+Houston+St+New+York+NY+10002" target="_blank" class="map-link">📍 Teleport to 205 E Houston St</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=205+E+Houston+St+New+York+NY+10002" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 205 E Houston St</a>
             </div>
 
             <div class="food-block">
                 <h2>The High Tide: Le Bernardin</h2>
                 <p>On the opposite end of the spectrum is the refined, hushed elegance of Le Bernardin. Eric Ripert’s seafood isn't just cooked; it's curated. This is the ultimate "Splurge" for the points enthusiast.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=155+W+51st+St+New+York+NY+10019" target="_blank" class="map-link">📍 Teleport to 155 W 51st St</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=155+W+51st+St+New+York+NY+10019" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 155 W 51st St</a>
             </div>
 
             <div class="food-block">
                 <h2>Legacy of the LES: Russ & Daughters</h2>
                 <p>For over a century, Russ & Daughters has been the keeper of the city's smoked fish soul. Ordering a bagel with lox here is a lesson in patience and heritage.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=179+E+Houston+St+New+York+NY+10002" target="_blank" class="map-link">📍 Teleport to 179 E Houston St</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=179+E+Houston+St+New+York+NY+10002" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 179 E Houston St</a>
             </div>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h3>Stay in the Loop</h3>
+                <p>Receive weekly alerts on the most profitable card bonuses and hidden city guides.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Join the Elite</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Editorial Disclosure:</strong> TravelCard.info is an independent review site. We are not a financial advisor. Our mission is to provide accurate, high-fidelity data to help you maximize your travel rewards. Always verify terms on the issuer's official site.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span id="last-updated-badge"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

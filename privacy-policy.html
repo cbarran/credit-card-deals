@@ -34,24 +34,55 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
         h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 40px; }
-        h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 48px; margin-bottom: 20px; color: #38bdf8; }
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-top: 48px; margin-bottom: 20px; color: var(--gold-accent); }
         p, li { color: #94a3b8; line-height: 1.8; font-size: 1.1rem; }
-        .update-badge { display: inline-block; padding: 6px 16px; background: rgba(56, 189, 248, 0.1); color: #38bdf8; border-radius: 100px; font-weight: 600; font-size: 0.85rem; margin-bottom: 24px; }
-        .contact-box { margin-top: 60px; padding: 40px; background: rgba(255, 255, 255, 0.03); border-radius: 24px; border-left: 4px solid #38bdf8; }
+        .update-badge { display: inline-block; padding: 6px 16px; background: rgba(212, 167, 44, 0.1); color: var(--gold-accent); border-radius: 100px; font-weight: 600; font-size: 0.85rem; margin-bottom: 24px; }
+        .contact-box { margin-top: 60px; padding: 40px; background: rgba(255, 255, 255, 0.03); border-radius: 24px; border-left: 4px solid var(--gold-accent); }
         .contact-box h3 { font-family: 'Outfit', sans-serif; color: #fff; margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 100px 16px 40px;
+            }
+            .legal-card {
+                padding: 32px 20px;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 24px;
+                line-height: 1.2;
+            }
+            h2 {
+                font-size: 1.4rem;
+                margin-top: 32px;
+            }
+            p, li {
+                font-size: 1rem;
+            }
+            .contact-box {
+                padding: 24px;
+                margin-top: 40px;
+            }
+        }
     </style>
 </head>
 <body>
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Cards</a></li>
                     <li><a href="guides.html">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -67,7 +98,7 @@
 
             <h2>2. Advertising & Cookies</h2>
             <p>TravelCard.info partners with third-party vendors, including <strong>Google AdSense</strong>. Google uses cookies (such as the DART cookie) to serve relevant advertisements based on your visit to this site and other websites across the internet.</p>
-            <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color: #38bdf8;">Google Ad Settings</a>.</p>
+            <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color: var(--gold-accent);">Google Ad Settings</a>.</p>
 
             <h2>3. CCPA & GDPR Data Rights</h2>
             <p>Regardless of your location, we respect your data rights. You have the right to:</p>
@@ -90,8 +121,29 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 TravelCard.info. All rights reserved.</p>
+            <div class="newsletter-section">
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <span id="last-updated-badge" style="margin-left: 10px; opacity: 0.6; font-size: 0.75rem;"></span>
+                </p>
+            </div>
         </div>
     </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
 </body>
 </html>

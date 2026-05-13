@@ -15,18 +15,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Points Strategy: NYC Travel Hacking | TravelCard.info</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=9.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; }
-        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, transparent 70%); }
+        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(5, 150, 105, 0.15) 0%, transparent 70%); }
         .guide-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .guide-meta { color: var(--accent-primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
+        .guide-meta { color: #D4A72C; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
         .guide-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
-        .strategy-box { border: 1px solid var(--border-color); border-radius: 24px; padding: 40px; background: rgba(56, 189, 248, 0.03); margin: 60px 0; }
+        .narrative-lead { font-size: 1.4rem; color: white; margin-bottom: 60px; font-weight: 600; line-height: 1.4; text-align: center; }
+        .guide-content h2 { color: white; margin: 40px 0 16px; font-family: 'Outfit', sans-serif; font-size: 1.8rem; }
+        .guide-content p { margin-bottom: 32px; font-size: 1.15rem; color: var(--text-secondary); }
+        .strategy-box { border: 1px solid rgba(5, 150, 105, 0.2); border-radius: 24px; padding: 40px; background: linear-gradient(135deg, rgba(5, 150, 105, 0.05) 0%, transparent 100%); margin: 60px 0; border-left: 4px solid #D4A72C; }
         .strategy-box h2 { color: white; margin-bottom: 16px; font-family: 'Outfit', sans-serif; }
-        .strategy-box p { font-size: 1.1rem; margin-bottom: 24px; }
-        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        .strategy-box p { font-size: 1.1rem; margin-bottom: 0; color: var(--text-secondary); }
+        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: #D4A72C; text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        
+        @media (max-width: 768px) {
+            .guide-hero { padding: 80px 0 40px; }
+            .guide-title { font-size: 2.2rem; letter-spacing: -1px; }
+            .narrative-lead { font-size: 1.1rem; margin-bottom: 30px; }
+            .strategy-box { padding: 24px; margin: 30px 0; }
+            .guide-content p { font-size: 1rem; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -34,32 +48,39 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
                     <li><a href="guides.html">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
     <header class="guide-hero">
         <div class="container">
             <span class="guide-meta">Strategy • Analysis</span>
             <h1 class="guide-title">How to Hack the City that Never Sleeps</h1>
         </div>
     </header>
+
     <main class="guide-container">
-        <a href="guides.html" class="back-to-guides">← Back to all guides</a>
+        <a href="guides.html" class="back-to-guides"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to all guides</a>
         
-        <p style="font-size: 1.3rem; font-weight: 600; text-align: center; margin-bottom: 60px; color: white;">NYC is the most expensive city in America, but for a strategic travel hacker, it's also a points-earning machine.</p>
+        <p class="narrative-lead">NYC is the most expensive city in America, but for a strategic travel hacker, it's also a points-earning machine.</p>
 
         <div class="guide-content">
             <p>Every New York transaction is a choice. You can pay with cash and lose, or you can pay with strategy and win. From the MTA turnstiles to your monthly rent, here is how we turn the cost of living into the cost of flying first class.</p>
 
             <div class="strategy-box">
                 <h2>The Rent Rebellion: Bilt</h2>
-                <p>For decades, New York residents watched their largest monthly expense—rent—evaporate into the landlord's pocket with zero reward. We change that narrative with Bilt. By paying your $3,500 monthly rent through Bilt, you aren't just paying for a place to live; you're earning a free round-trip to Europe every year. It’s the ultimate "life hack" for the urban dweller.</p>
+                <p>For decades, New York residents watched their largest monthly expense—rent—evaporate into the landlord's pocket with zero reward. We change that narrative with Bilt. By paying your monthly rent through Bilt, you aren't just paying for a place to live; you're earning a free round-trip to Europe every year. It’s the ultimate "life hack" for the urban dweller.</p>
             </div>
 
             <h2>Mastering the OMNY Tap</h2>
@@ -71,5 +92,35 @@
             <p>Travel hacking in NYC isn't about saving pennies; it's about leveraging the city’s high costs to fuel a low-cost global lifestyle. Stop spending, and start strategizing.</p>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <span id="last-updated-badge" style="margin-left: 10px; opacity: 0.6; font-size: 0.75rem;"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

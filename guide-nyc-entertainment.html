@@ -15,19 +15,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Insider’s Secret: NYC Hidden Gems | TravelCard.info</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=9.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; }
-        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(251, 191, 36, 0.15) 0%, transparent 70%); }
+        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(5, 150, 105, 0.15) 0%, transparent 70%); }
         .guide-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .guide-meta { color: #fbbf24; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
+        .guide-meta { color: #D4A72C; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
         .guide-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
-        .gem-story h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; margin: 60px 0 24px; }
+        .guide-content h2 { color: white; margin: 60px 0 24px; font-family: 'Outfit', sans-serif; font-size: 2rem; }
+        .guide-content p { margin-bottom: 32px; font-size: 1.15rem; color: var(--text-secondary); }
         .gem-image { width: 100%; border-radius: 24px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1); }
-        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(251, 191, 36, 0.1); color: #fbbf24; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; }
-        .map-link:hover { background: rgba(251, 191, 36, 0.2); }
-        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(5, 150, 105, 0.1); color: #10b981; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; margin-bottom: 32px; border: 1px solid rgba(5, 150, 105, 0.2); }
+        .map-link:hover { background: rgba(5, 150, 105, 0.2); border-color: rgba(5, 150, 105, 0.4); }
+        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: #D4A72C; text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        
+        @media (max-width: 768px) {
+            .guide-hero { padding: 80px 0 40px; }
+            .guide-title { font-size: 2.2rem; letter-spacing: -1px; }
+            .guide-content h2 { font-size: 1.6rem; margin: 40px 0 16px; }
+            .guide-content p { font-size: 1rem; margin-bottom: 24px; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -35,38 +46,75 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
                     <li><a href="guides.html">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
     <header class="guide-hero">
         <div class="container">
             <span class="guide-meta">The Insider’s Secret</span>
             <h1 class="guide-title">Beyond the Tourist Track</h1>
         </div>
     </header>
+
     <main class="guide-container">
-        <a href="guides.html" class="back-to-guides">← Back to all guides</a>
+        <a href="guides.html" class="back-to-guides"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to all guides</a>
         
-        <div class="gem-story">
+        <div class="guide-content">
             <h2>The Financial Sanctuary: The Elevated Acre</h2>
             <img src="assets/hidden-gems.png" alt="Elevated Acre Hidden Park" class="gem-image">
-            <p>Imagine standing in the center of the world's most frantic financial engine, and finding a meadow. The Elevated Acre is a hidden park tucked between skyscrapers.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=55+Water+St+New+York+NY+10041" target="_blank" class="map-link">📍 Teleport to 55 Water St</a>
+            <p>Imagine standing in the center of the world's most frantic financial engine, and finding a meadow. The Elevated Acre is a hidden park tucked between skyscrapers in the Financial District. It offers one of the most serene views of the East River and the Brooklyn Bridge, all while hovering above the noise of Water Street.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=55+Water+St+New+York+NY+10041" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 55 Water St</a>
 
             <h2>Vintage Soul: Barcade</h2>
-            <p>At Barcade, the story is one of nostalgia—sipping craft beer while defending a high score on an 80s arcade cabinet. High-end craft beer meets vintage gaming consoles.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=148+W+24th+St+New+York+NY+10011" target="_blank" class="map-link">📍 Teleport to 148 W 24th St</a>
+            <p>At Barcade, the story is one of nostalgia—sipping craft beer while defending a high score on an 80s arcade cabinet. It's where high-end craft beer culture meets the tactile joy of vintage gaming. It’s a reminder that even in a city obsessed with the future, we still find time to play in the past.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=148+W+24th+St+New+York+NY+10011" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 148 W 24th St</a>
 
             <h2>The Paper Cathedral: The Morgan Library</h2>
-            <p>To enter Pierpont Morgan’s private library is to step into a fairy tale. It’s a place of hushed, gilded beauty that reminds us that we still cherish the treasures of the past.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=225+Madison+Ave+New+York+NY+10016" target="_blank" class="map-link">📍 Teleport to 225 Madison Ave</a>
+            <p>To enter Pierpont Morgan’s private library is to step into a fairy tale. Surrounded by three-story floor-to-ceiling bookshelves and Renaissance masterpieces, it’s a place of hushed, gilded beauty. It reminds us that among the steel and glass, the city still cherishes the quiet power of the written word.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=225+Madison+Ave+New+York+NY+10016" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 225 Madison Ave</a>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <span id="last-updated-badge" style="margin-left: 10px; opacity: 0.6; font-size: 0.75rem;"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

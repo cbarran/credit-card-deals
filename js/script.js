@@ -389,11 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mood Skin Logic
     const issuerColors = {
         'american express': { bg: '#0b1d3d', accent: '#fbbf24' },
-        'chase': { bg: '#0a2351', accent: '#38bdf8' },
+        'chase': { bg: '#0a2351', accent: '#059669' },
         'capital one': { bg: '#002a5c', accent: '#00c1d4' },
         'citi': { bg: '#1c2c44', accent: '#d9261c' },
         'wells fargo': { bg: '#2b1a1a', accent: '#d71e28' },
-        'generic': { bg: '#0f172a', accent: '#38bdf8' }
+        'generic': { bg: '#0f172a', accent: '#059669' }
     };
 
     function applyMoodSkin(issuer) {
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetMoodSkin() {
         document.documentElement.style.setProperty('--mood-bg', '#0f172a');
-        document.documentElement.style.setProperty('--mood-accent', '#38bdf8');
+        document.documentElement.style.setProperty('--mood-accent', '#059669');
     }
 
     function updateComparisonBar() {

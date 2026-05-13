@@ -15,19 +15,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pulse of the City: NYC Culture Guide | TravelCard.info</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=9.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; }
-        .guide-hero { padding: 120px 0 80px; text-align: center; background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%); }
-        .guide-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .guide-meta { color: #a855f7; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 16px; display: block; letter-spacing: 2px; }
-        .guide-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
-        .culture-narrative h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.2rem; margin: 60px 0 24px; }
-        .culture-image { width: 100%; border-radius: 24px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1); }
-        .map-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.1); color: #a855f7; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; margin-top: 10px; }
-        .map-link:hover { background: rgba(168, 85, 247, 0.2); }
-        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; margin-bottom: 40px; }
+        .guide-body { background: #020617; color: var(--text-primary); line-height: 1.8; font-family: 'Inter', sans-serif; }
+        .guide-hero { padding: 160px 0 100px; text-align: center; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%); position: relative; }
+        .guide-container { max-width: 850px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 2; }
+        
+        .guide-meta { color: #D4A72C; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 20px; display: block; letter-spacing: 3px; font-family: 'Inter', sans-serif; }
+        .guide-title { font-family: 'Outfit', sans-serif; font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 32px; letter-spacing: -2px; color: white; }
+        
+        .culture-narrative h2 { color: white; font-family: 'Outfit', sans-serif; font-size: 2.4rem; margin: 80px 0 24px; font-weight: 800; letter-spacing: -0.5px; }
+        .culture-narrative p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 32px; font-weight: 400; line-height: 1.7; }
+        .culture-image { width: 100%; border-radius: 20px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1); object-fit: cover; aspect-ratio: 16/9; }
+        
+        .map-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            background: rgba(212, 167, 44, 0.1); 
+            color: #D4A72C; 
+            padding: 12px 24px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            border: 1px solid rgba(212, 167, 44, 0.2);
+            margin-top: 8px;
+        }
+        .map-link:hover { background: #D4A72C; color: #020617; transform: scale(1.05); border-color: #D4A72C; }
+        
+        .back-to-guides { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; font-weight: 600; margin-bottom: 48px; transition: color 0.2s; font-size: 0.95rem; }
+        .back-to-guides:hover { color: #D4A72C; }
+
+        @media (max-width: 768px) {
+            .guide-hero { padding: 120px 0 60px; }
+            .guide-title { font-size: 2.6rem; letter-spacing: -1px; }
+            .culture-narrative h2 { font-size: 1.8rem; margin: 40px 0 16px; }
+            .culture-narrative p { font-size: 1rem; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -35,38 +65,74 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">Travel<span>Card</span></div>
-            <nav>
+            <nav id="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Cards</a></li>
-                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="guides.html" class="active">Guides</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
     <header class="guide-hero">
         <div class="container">
-            <span class="guide-meta">High Culture & Street Soul</span>
+            <span class="guide-meta" data-lucide="palette">High Culture & Street Soul</span>
             <h1 class="guide-title">The City's Pulse: Art & Sound</h1>
         </div>
     </header>
+
     <main class="guide-container">
-        <a href="guides.html" class="back-to-guides">← Back to all guides</a>
+        <a href="guides.html" class="back-to-guides"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to the Insider Series</a>
         
         <div class="culture-narrative">
             <h2>The Cathedral of History: The Met</h2>
             <img src="assets/met.png" alt="Met Museum Twilight" class="culture-image">
-            <p>Walking into the Metropolitan Museum of Art is an act of surrender. From the Temple of Dendur to the European galleries, the Met isn't a museum—it’s a physical map of our collective story.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=1000+5th+Ave+New+York+NY+10028" target="_blank" class="map-link">📍 Teleport to 1000 5th Ave</a>
+            <p>Walking into the Metropolitan Museum of Art is an act of surrender. From the Temple of Dendur to the European galleries, the Met isn't a museum—it’s a physical map of our collective story. It’s where five thousand years of human creativity reside under one roof.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=1000+5th+Ave+New+York+NY+10028" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 1000 5th Ave</a>
 
             <h2>The Modern Mecca: MoMA</h2>
-            <p>If the Met is history, MoMA is the future. It’s where you’ll find the mecca of modernism—from Starry Night to Warhol’s cans—all in a sleek midtown sanctuary.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=11+W+53rd+St+New+York+NY+10019" target="_blank" class="map-link">📍 Teleport to 11 W 53rd St</a>
+            <p>If the Met is history, MoMA is the future. It’s where you’ll find the mecca of modernism—from Starry Night to Warhol’s cans—all in a sleek midtown sanctuary. The sculpture garden remains the most peaceful hectare in all of Manhattan.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=11+W+53rd+St+New+York+NY+10019" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 11 W 53rd St</a>
 
             <h2>Late Night at the Vanguard</h2>
-            <p>Descend the red-carpeted stairs into the Village Vanguard and you are entering the holy grail of Jazz. There is a specific silence that falls over the room just before the first note is struck.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=178+7th+Ave+S+New+York+NY+10014" target="_blank" class="map-link">📍 Teleport to 178 7th Ave S</a>
+            <p>Descend the red-carpeted stairs into the Village Vanguard and you are entering the holy grail of Jazz. There is a specific silence that falls over the room just before the first note is struck. Miles, Coltrane, and Evans all stood here; the air still feels charged with their genius.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=178+7th+Ave+S+New+York+NY+10014" target="_blank" class="map-link"><i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> Teleport to 178 7th Ave S</a>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h3>Stay in the Loop</h3>
+                <p>Receive weekly alerts on the most profitable card bonuses and hidden city guides.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Join the Elite</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Editorial Disclosure:</strong> TravelCard.info is an independent review site. We are not a financial advisor. Our mission is to provide accurate, high-fidelity data to help you maximize your travel rewards. Always verify terms on the issuer's official site.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span id="last-updated-badge"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay"></div>
+    <script src="js/common.js?v=9.0"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

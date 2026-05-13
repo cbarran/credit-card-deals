@@ -38,6 +38,15 @@
         .guide-tag { color: var(--accent-primary); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 8px; display: block; }
         .guide-title-box { color: white; font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
         .guide-excerpt { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .guides-hero { padding: 60px 0 40px; }
+            .guides-hero h1 { font-size: 2.2rem; }
+            .guides-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 16px; }
+            .guide-item:hover { transform: none; }
+            .guide-thumb { height: 180px; }
+            .guide-title-box { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body class="guide-body">
@@ -128,7 +137,25 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 TravelCard.info. All rights reserved.</p>
+            <div class="newsletter-section">
+                <h3>Get updates when cards change</h3>
+                <p>We'll email you when we add new cards or update our data.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="subscription-message" style="margin-top: 10px; display: none;"></div>
+            </div>
+            <div class="footer-content">
+                <p class="disclaimer">
+                    <strong>Informational Disclaimer:</strong> This site is for informational purposes only. We are not affiliated with any credit card issuers and receive no compensation for the information provided. We simply do the heavy lifting to help you save time finding the best credit card bonuses. Please read card terms and conditions carefully. 
+                    Investments and credit decisions carry risks.
+                </p>
+                <p class="copyright">&copy; 2026 TravelCard.info. All rights reserved. 
+                    <a href="privacy-policy.html" style="margin-left: 15px; color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <span id="last-updated-badge" style="margin-left: 10px; opacity: 0.6; font-size: 0.75rem;"></span>
+                </p>
+            </div>
         </div>
     </footer>
     <div class="nav-overlay"></div>
