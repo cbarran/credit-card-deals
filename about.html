@@ -7,83 +7,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | TravelCard.info</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .about-body { background: #020617; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 80px; }
+        .about-body { 
+            background: #020617; 
+            overflow-x: hidden; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            padding-top: 120px; 
+            padding-bottom: 60px;
+        }
         
         .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        .about-perspective { perspective: 1000px; width: 100%; max-width: 1000px; padding: 40px 20px; }
+        .about-perspective { 
+            perspective: 2000px; 
+            width: 100%; 
+            max-width: 1100px; 
+            padding: 40px 20px; 
+        }
         
         .cool-about-card {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 40px;
-            padding: 80px 60px;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(212, 167, 44, 0.15);
+            border-radius: 48px;
+            padding: 100px 60px;
             text-align: center;
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cool-about-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(0, 78, 59, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .cool-header { 
-            font-size: 4.5rem; 
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem; 
             font-weight: 800; 
-            background: linear-gradient(to right, #fff, #38bdf8); 
+            background: linear-gradient(135deg, #fff 0%, var(--gold-accent) 100%); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             margin-bottom: 24px;
-            letter-spacing: -2px;
-            transform: translateZ(50px);
+            letter-spacing: -0.04em;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .cool-mission { 
-            font-size: 1.5rem; 
-            color: var(--text-secondary); 
-            max-width: 700px; 
-            margin: 0 auto 60px; 
-            line-height: 1.4;
-            transform: translateZ(30px);
+            font-size: 1.8rem; 
+            color: var(--text-primary); 
+            max-width: 800px; 
+            margin: 0 auto 80px; 
+            line-height: 1.3;
+            font-weight: 400;
+        }
+
+        .cool-mission em {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--gold-accent);
+            font-weight: 500;
         }
 
         .process-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
-            gap: 32px; 
-            margin-bottom: 60px;
-            transform: translateZ(20px);
+            gap: 24px; 
+            margin-bottom: 80px;
+            transform: translateZ(30px);
         }
 
         .process-item {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 24px;
-            border-radius: 24px;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 30px;
+            border-radius: 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 1;
         }
 
-        .process-item:hover { background: rgba(56, 189, 248, 0.05); border-color: var(--accent-primary); transform: translateY(-10px); }
+        .process-item:hover { 
+            background: rgba(0, 78, 59, 0.1); 
+            border-color: var(--gold-accent); 
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
 
-        .process-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
-        .process-title { color: white; font-weight: 700; font-size: 1.2rem; margin-bottom: 12px; display: block; }
-        .process-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .process-icon-wrap {
+            width: 64px;
+            height: 64px;
+            background: rgba(212, 167, 44, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--gold-accent);
+            transition: var(--transition);
+        }
+
+        .process-item:hover .process-icon-wrap {
+            background: var(--gold-accent);
+            color: var(--emerald-900);
+            transform: rotate(10deg);
+        }
+
+        .process-title { 
+            color: white; 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            margin-bottom: 16px; 
+            display: block; 
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .process-desc { 
+            color: var(--text-secondary); 
+            font-size: 0.95rem; 
+            line-height: 1.7; 
+        }
 
         .about-footer-text { 
-            font-size: 1.1rem; 
+            font-size: 1.2rem; 
             color: var(--text-secondary); 
-            max-width: 800px; 
+            max-width: 850px; 
             margin: 0 auto; 
-            line-height: 1.8;
-            transform: translateZ(10px);
+            line-height: 1.9;
+            transform: translateZ(20px);
         }
 
-        .about-footer-text strong { color: white; }
+        .about-footer-text strong { 
+            color: white; 
+            font-weight: 700;
+        }
+
+        .contact-section {
+            margin-top: 60px; 
+            border-top: 1px solid rgba(255,255,255,0.08); 
+            padding-top: 60px;
+        }
+
+        .contact-title {
+            color: white; 
+            font-family: 'Outfit', sans-serif; 
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--gold-accent); 
+            font-weight: 800; 
+            text-decoration: none; 
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .contact-email::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: right;
+        }
+
+        .contact-email:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
 
         @media (max-width: 768px) {
-            .process-grid { grid-template-columns: 1fr; }
-            .cool-header { font-size: 3rem; }
-            .cool-about-card { padding: 40px 24px; }
+            .about-body { padding-top: 100px; }
+            .process-grid { grid-template-columns: 1fr; gap: 20px; }
+            .cool-header { font-size: 3.5rem; }
+            .cool-about-card { padding: 60px 24px; border-radius: 32px; }
+            .cool-mission { font-size: 1.4rem; margin-bottom: 50px; }
+            .about-footer-text { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -110,35 +232,35 @@
 
     <div class="about-perspective">
         <main class="cool-about-card" id="about-card">
-            <h1 class="cool-header">About us</h1>
-            <p class="cool-mission">We built this because comparing credit cards shouldn't feel like a part-time job.</p>
+            <h1 class="cool-header">About Us</h1>
+            <p class="cool-mission">We built this because comparing credit cards shouldn't feel like a <em>part-time job</em>.</p>
             
             <div class="process-grid">
                 <div class="process-item">
-                    <span class="process-icon">🔍</span>
+                    <div class="process-icon-wrap">
+                        <i data-lucide="search" width="32" height="32"></i>
+                    </div>
                     <span class="process-title">Find</span>
-                    <p class="process-desc">We track 263+ card data points daily, so you don't have to.</p>
+                    <p class="process-desc">We track 263+ card data points daily, so you don't have to worry about missing the best offers.</p>
                 </div>
                 <div class="process-item">
-                    <span class="process-icon">✨</span>
+                    <div class="process-icon-wrap">
+                        <i data-lucide="sparkles" width="32" height="32"></i>
+                    </div>
                     <span class="process-title">Simplify</span>
-                    <p class="process-desc">We strip away the bank jargon and show you just the facts.</p>
+                    <p class="process-desc">We strip away the bank jargon and show you just the facts in a clear, editorial format.</p>
                 </div>
                 <div class="process-item">
-                    <span class="process-icon">⚡</span>
+                    <div class="process-icon-wrap">
+                        <i data-lucide="zap" width="32" height="32"></i>
+                    </div>
                     <span class="process-title">Save Time</span>
-                    <p class="process-desc">Find your next travel reward in seconds, not hours.</p>
+                    <p class="process-desc">Find your next travel reward in seconds, not hours, with our high-performance discovery hub.</p>
                 </div>
             </div>
 
             <div class="about-footer-text">
-                <p>TravelCard.info is an <strong>independent editorial platform</strong>. We aren't owned by a bank, and we don't have a corporate bias. Our team uses data-driven insights to help you travel for less. No robotic language, no hidden catches—just clear data for your next journey.</p>
-                
-                <div class="contact-section" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px;">
-                    <h3 style="color: white; font-family: 'Outfit', sans-serif; margin-bottom: 8px;">Get in touch</h3>
-                    <p style="color: #94a3b8;">Have a question about a card or a guide? Reach out to our research team.</p>
-                    <a href="mailto:hello@travelcard.info" style="color: #38bdf8; font-weight: 700; text-decoration: none; font-size: 1.2rem;">hello@travelcard.info</a>
-                </div>
+                <p>TravelCard.info is an <strong>independent editorial platform</strong>. We aren't owned by a bank, and we don't have a corporate bias. Our team uses data-driven insights to help you travel for less. No robotic language, no hidden catches—just clear, precise data for your next journey.</p>
             </div>
         </main>
     </div>
@@ -146,23 +268,8 @@
     <div class="nav-overlay"></div>
     <script src="js/common.js?v=9.0"></script>
     <script>
-        const card = document.getElementById('about-card');
-        const container = document.querySelector('.about-perspective');
-
-        container.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-
-        container.addEventListener('mouseenter', () => {
-            card.style.transition = 'none';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            card.style.transition = 'transform 0.5s ease';
-            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-        });
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
 </html>

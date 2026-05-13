@@ -1,4 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide Icons
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    // Elite Dropdown Logic
+    const dropdowns = document.querySelectorAll('.elite-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const items = dropdown.querySelectorAll('.dropdown-item');
+        const hiddenSelect = dropdown.querySelector('select');
+        const selectedValueDisplay = dropdown.querySelector('.selected-value');
+
+        // Toggle dropdown - Listen on the whole component for better UX
+        dropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close other dropdowns
+            dropdowns.forEach(d => {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+            dropdown.classList.toggle('active');
+        });
+
+        // Item selection
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const value = item.getAttribute('data-value');
+                const text = item.textContent;
+
+                // Update hidden select
+                if (hiddenSelect) {
+                    hiddenSelect.value = value;
+                    // Trigger change event for existing logic
+                    hiddenSelect.dispatchEvent(new Event('change'));
+                }
+
+                // Update UI
+                selectedValueDisplay.textContent = text;
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                // Close menu
+                dropdown.classList.remove('active');
+            });
+        });
+    });
+
+    // Close dropdowns on outside click - Corrected logic
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.elite-dropdown')) {
+            dropdowns.forEach(d => d.classList.remove('active'));
+        }
+    });
+
     // Priority: Fetch data first
     const container = document.getElementById('deals-container');
 

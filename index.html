@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css?v=9.0">
 </head>
 <body>
@@ -105,18 +106,30 @@
 
         <section id="deals" class="deals-section">
             <div class="container">
-                <!-- Smart Discovery Hub -->
+                <!-- Elite Discovery Hub -->
                 <div class="discovery-hub">
                     <h2 class="hub-title">Explore Global Rewards</h2>
-                    <div class="discovery-bar">
-                        <div class="search-group">
+                    <div class="elite-discovery-bar">
+                        <div class="search-wrap">
+                            <i data-lucide="search" class="search-icon"></i>
                             <input type="text" id="search-input" placeholder="Search by card name, bank, or bonus type...">
                         </div>
                         
-                        <div class="filter-controls">
-                            <div class="control-item">
+                        <div class="filter-wrap">
+                            <!-- Category Dropdown -->
+                            <div class="elite-dropdown" id="category-dropdown" data-filter="category">
                                 <label>Category</label>
-                                <select id="category-filter">
+                                <div class="dropdown-trigger">
+                                    <span class="selected-value">All Categories</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-item active" data-value="all">All Categories</div>
+                                    <div class="dropdown-item" data-value="travel">Travel Rewards</div>
+                                    <div class="dropdown-item" data-value="cashback">Cashback Rewards</div>
+                                    <div class="dropdown-item" data-value="no-fee">No Annual Fee</div>
+                                </div>
+                                <select id="category-filter" style="display: none;">
                                     <option value="all">All Categories</option>
                                     <option value="travel">Travel Rewards</option>
                                     <option value="cashback">Cashback Rewards</option>
@@ -124,9 +137,22 @@
                                 </select>
                             </div>
 
-                            <div class="control-item">
+                            <!-- Issuer Dropdown -->
+                            <div class="elite-dropdown" id="issuer-dropdown" data-filter="issuer">
                                 <label>Issuer</label>
-                                <select id="issuer-filter">
+                                <div class="dropdown-trigger">
+                                    <span class="selected-value">All Banks</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-item active" data-value="all">All Banks</div>
+                                    <div class="dropdown-item" data-value="chase">Chase</div>
+                                    <div class="dropdown-item" data-value="american express">American Express</div>
+                                    <div class="dropdown-item" data-value="capital one">Capital One</div>
+                                    <div class="dropdown-item" data-value="citi">Citi</div>
+                                    <div class="dropdown-item" data-value="wells fargo">Wells Fargo</div>
+                                </div>
+                                <select id="issuer-filter" style="display: none;">
                                     <option value="all">All Banks</option>
                                     <option value="chase">Chase</option>
                                     <option value="american express">American Express</option>
@@ -136,9 +162,20 @@
                                 </select>
                             </div>
 
-                            <div class="control-item">
+                            <!-- Sort Dropdown -->
+                            <div class="elite-dropdown" id="sort-dropdown" data-filter="sort">
                                 <label>Sort By</label>
-                                <select id="sort-by">
+                                <div class="dropdown-trigger">
+                                    <span class="selected-value">Featured First</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-item active" data-value="featured">Featured First</div>
+                                    <div class="dropdown-item" data-value="bonus-high">Highest Bonus</div>
+                                    <div class="dropdown-item" data-value="fee-low">Lowest Annual Fee</div>
+                                    <div class="dropdown-item" data-value="rate-high">Best Rewards Rate</div>
+                                </div>
+                                <select id="sort-by" style="display: none;">
                                     <option value="featured">Featured First</option>
                                     <option value="bonus-high">Highest Bonus</option>
                                     <option value="fee-low">Lowest Annual Fee</option>
