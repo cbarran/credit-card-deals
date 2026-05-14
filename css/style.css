@@ -395,35 +395,57 @@ body {
 
 
 
-/* Reward Estimator Drawer Styles */
-.calc-drawer {
+/* Reward Estimator Modal Styles */
+.calc-overlay {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 400px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.calc-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.calc-drawer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 450px;
     max-width: 90vw;
-    height: 100%;
-    background: #0f172a; /* Solid background since blur is removed */
+    height: auto;
+    max-height: 90vh;
+    background: #0f172a;
     z-index: 3000;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), width 0s 0.5s, padding 0s 0.5s;
-    transform: translateX(100%);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate(-50%, -40%) scale(0.95);
     display: flex;
     flex-direction: column;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
     visibility: hidden;
-    width: 0; /* Collapse width to prevent scroll leak */
+    opacity: 0;
     padding: 0;
-    overflow: hidden;
+    pointer-events: none;
 }
 
 .calc-drawer.active {
-    width: 400px;
+    width: 450px;
     max-width: 90vw;
-    right: 0;
-    transform: translateX(0);
+    transform: translate(-50%, -50%) scale(1);
     visibility: visible;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), width 0s;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .drawer-header {
@@ -635,13 +657,11 @@ input[type="range"] {
 /* Mobile Drawer Fixes */
 @media (max-width: 768px) {
     .calc-drawer {
-        width: 100%;
-        right: -100%;
+        width: 95vw;
     }
     .calc-drawer.active {
-        width: 100%;
+        width: 95vw;
         max-width: 100%;
-        right: 0;
     }
     
     .modal-content {
