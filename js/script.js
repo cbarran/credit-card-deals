@@ -394,20 +394,28 @@ document.addEventListener('DOMContentLoaded', () => {
         applyFilters();
     }
 
-    if (calcToggle) {
-        calcToggle.addEventListener('click', () => calcDrawer.classList.add('active'));
+    const calcOverlay = document.getElementById('calc-overlay');
+
+    function openCalc() {
+        if (calcDrawer) calcDrawer.classList.add('active');
+        if (calcOverlay) calcOverlay.classList.add('active');
     }
 
-    if (closeDrawer) {
-        closeDrawer.addEventListener('click', () => calcDrawer.classList.remove('active'));
+    function closeCalc() {
+        if (calcDrawer) calcDrawer.classList.remove('active');
+        if (calcOverlay) calcOverlay.classList.remove('active');
     }
+
+    if (calcToggle) calcToggle.addEventListener('click', openCalc);
+    if (closeDrawer) closeDrawer.addEventListener('click', closeCalc);
+    if (calcOverlay) calcOverlay.addEventListener('click', closeCalc);
 
     // Delegate badge clicks from the deals grid
     const dealsGrid = document.getElementById('deals-container');
     if (dealsGrid) {
         dealsGrid.addEventListener('click', (e) => {
             if (e.target.closest('.magic-earnings-badge')) {
-                if (calcDrawer) calcDrawer.classList.add('active');
+                openCalc();
             }
         });
     }
